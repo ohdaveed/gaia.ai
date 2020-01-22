@@ -34,8 +34,4 @@ function Register() {
 		</>
   );
 }
-<<<<<<< HEAD
-export default Register 
-=======
-export default Register 
->>>>>>> bf2f139a1ad88e87450cc3212bc450ad5808523e
+export default Register
