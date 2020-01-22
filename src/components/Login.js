@@ -1,10 +1,13 @@
 import React from 'react';
 import { Container, Form, Button } from 'react-bootstrap'
+import Menu from './Menu.js'
+
 
 function Login() {
   return (
 		<>
 			<Container>
+                <Menu />
 				<Form>
 					<Form.Group controlId="formBasicEmail">
 						<Form.Label>Email address</Form.Label>
