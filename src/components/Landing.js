@@ -4,9 +4,8 @@ import { Card, CardTitle, CardText, CardImg, CardImgOverlay, Container, Button }
 const Landing = (props) => {
   return (
       <Container>
-    <div>
       <Card className="bg-dark text-white">
-  <Card.Img src="https://res.cloudinary.com/darrizon/image/upload/v1579651896/background-omg/green-leaves.jpg" alt="leaves bg" fluid />
+  <Card.Img src="https://res.cloudinary.com/darrizon/image/upload/v1579651896/background-omg/green-leaves.jpg" alt="leaves bg"/>
   <Card.ImgOverlay>
 
 <Card.Body><Card.Title><h1>GAIA.ai</h1></Card.Title>
@@ -17,7 +16,7 @@ const Landing = (props) => {
     </Card.Body>
   </Card.ImgOverlay>
 </Card>
-    </div>
+    
     </Container>
   );
 };
