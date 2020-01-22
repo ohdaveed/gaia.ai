@@ -8,6 +8,7 @@ import {
   FormControl,
   Container
 } from "react-bootstrap";
+
 import { Link } from "react-router-dom";
 
 function Menu() {
@@ -15,7 +16,7 @@ function Menu() {
     <>
       <Container>
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="#home">GAIA.ai</Navbar.Brand>
+          <Navbar.Brand href="/">GAIA.ai</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Nav>
             <Link to="/">Home</Link> {""}

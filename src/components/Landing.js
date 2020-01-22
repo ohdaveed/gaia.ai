@@ -8,6 +8,7 @@ import {
   Container,
   Button
 } from "react-bootstrap";
+
 import Menu from "./Menu.js";
 
 function Landing() {
@@ -29,7 +30,7 @@ function Landing() {
                 Explore the world. Take photos. Identify of 10,000 species of
                 plants
               </Card.Text>
-              <Button size="lg"> SIGN UP!</Button>
+              <Button size="lg" href='/register'> SIGN UP!</Button>
             </Card.Body>
           </Card.ImgOverlay>
         </Card>
