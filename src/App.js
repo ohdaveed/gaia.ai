@@ -5,16 +5,13 @@ import Login from './components/Login.js'
 import Landing from './components/Landing.js'
 import Register from './components/Register.js'
 
-=======
-// import Router from './components/Router.js'
+
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useRouteMatch,
-  useParams
+  Link
 } from "react-router-dom";
 
 

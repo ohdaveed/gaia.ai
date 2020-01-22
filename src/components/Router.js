@@ -7,8 +7,8 @@ import Landing from './Landing.js'
 
 const Router = () => (
     <Router>
-        
-    
+
+
   <Switch>
     <Redirect from="/" to="/home"/>
     <Route path="/home" component={Landing} />
