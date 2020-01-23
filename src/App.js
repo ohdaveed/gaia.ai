@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./components/Login.js";
 import Landing from "./components/Landing.js";
 import Register from "./components/Register.js";
+import Dash from './components/Dash.js'
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -19,6 +20,11 @@ function App() {
         <Route path="/register">
           <Register />
         </Route>
+
+        <Route path="/dash">
+          <Dash />
+        </Route>
+
         <Route path="/">
           <Landing />
         </Route>
