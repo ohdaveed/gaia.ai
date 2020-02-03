@@ -28,7 +28,7 @@ function Register() {
 
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Repeat Password</Form.Label>
-            <Form.Control type="password1" placeholder="Password" />
+            <Form.Control type="password" placeholder=" Repeat Password" />
           </Form.Group>
           <Button variant="primary" type="submit">
             Submit
