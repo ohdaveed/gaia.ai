@@ -1,21 +1,14 @@
 import React from "react";
-import {
-  Card,
-  CardTitle,
-  CardText,
-  CardImg,
-  CardImgOverlay,
-  Container,
-  Button
-} from "react-bootstrap";
+import { Container, Card , Button } from "react-bootstrap";
 
-import Menu from "./Menu.js";
 
-function Landing() {
+// import Menu from "../components/Menu.js";
+
+function Home() {
   return (
-    <>
+    <>  
       <Container>
-        <Menu />
+        {/* <Menu /> */}
         <Card className="bg-dark text-white">
           <Card.Img
             src="https://res.cloudinary.com/darrizon/image/upload/v1579651896/background-omg/green-leaves.jpg"
@@ -39,4 +32,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default Home;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
-import Menu from "./Menu.js";
+import Menu from "../components/Menu.js";
 import axios from "axios"
 
 function Login(props) {
@@ -56,7 +56,7 @@ function Login(props) {
   return (
     <>
       <Container>
-        <Menu />
+        {/* <Menu /> */}
         <Form onSubmit={handleOnSubmit}>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>

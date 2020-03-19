@@ -2,7 +2,7 @@ import React from "react";
 
 import { Nav, Container } from "react-bootstrap";
 
-function Dash() {
+function AdminBar() {
   return (
     <Container>
       <Nav variant="pills" defaultActiveKey="/dash">
@@ -30,4 +30,4 @@ function Dash() {
   );
 }
 
-export default Dash
+export default AdminBar

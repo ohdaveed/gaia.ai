@@ -1,33 +1,25 @@
 import React from "react";
 import {
   Navbar,
-  NavDropdown,
   Nav,
   Form,
   Button,
   FormControl,
-  Container
+ 
 } from "react-bootstrap";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Menu() {
   return (
-    <>
-      <Container>
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" variant="light">
           <Navbar.Brand href="/">GAIA.ai</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Nav>
-            <Link to="/">Home</Link> {""}
-            <Link to="/login">Login</Link>
-            {""}
-            <Link to="/register">Register</Link>
-            {""}
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/register">Register</Nav.Link>
           </Nav>
         </Navbar>
-      </Container>
-    </>
   );
 }
 
