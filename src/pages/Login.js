@@ -41,7 +41,7 @@ function Login(props) {
 
     axios({
       method: "POST",
-      url: "http://localhost:8000/api/users/login",
+      url: "https://gaiadb.herokuapp.com/api/users/login",
       data: inputs
     })
       .then(r => {

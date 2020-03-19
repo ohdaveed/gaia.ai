@@ -4,12 +4,15 @@ import Login from "./pages/Login.js";
 import Home from "./pages/Home.js";
 import Register from "./pages/Register.js";
 import Admin from "./pages/Dash.js";
+import PrivateRoute from './components/PrivateRoute.js';
 // import Dash from "./pages/AdminBar.js";
 
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import { AuthContext } from './context/auth.js';
 
-function App() {
+function App(props) {
   return (
+    <AuthContext.Provider value={false}>
     <Router>
       <div>
         <ul>
@@ -34,10 +37,11 @@ function App() {
 
           <Route path="/register" component={Register} />
 
-          <Route path="/admin" component={Admin} />
+          <PrivateRoute path="/admin" component={Admin} />
         </Switch>
       </div>
     </Router>
+    </AuthContext.Provider>
   );
 }
 
