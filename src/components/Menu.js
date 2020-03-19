@@ -1,14 +1,10 @@
 import React from "react";
 import {
   Navbar,
-  Nav,
-  Form,
-  Button,
-  FormControl,
- 
+  Nav
 } from "react-bootstrap";
 
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 function Menu() {
   return (

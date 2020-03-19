@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Form, Button } from "react-bootstrap";
-import Menu from  '../components/Menu.js'
+// import Menu from  '../components/Menu.js'
 
 function Register() {
   return (
