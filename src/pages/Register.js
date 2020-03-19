@@ -1,35 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 // import Menu from  '../components/Menu.js'
+import { useAuth } from "../context/auth.js";
 
 function Register() {
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [email, setEmail] = useState("");
+  const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [password1, setPassword1] = useState("");
+  const { setAuthTokens } = useAuth();
+
   return (
     <>
       <Container>
         {/* <Menu /> */}
         <Form>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
+          <div>Username:</div>
+          <input 
+            type='username'
+            value={username}
+            onChange={e => {
+              setUserName(e.target.value)
+            }}
+            placeholder='Username
+            ' />
 
-          <Form.Group controlId="formBasicInput">
-            <Form.Label>Username</Form.Label>
-            <Form.Control type="text" placeholder="Enter username" />
-          </Form.Group>
+          <div>Email:</div>
+          <input
+            type="email"
+            value={email}
+            onChange={e => {
+              setEmail(e.target.value);
+            }}
+            placeholder="E-mail"
+          />
+          <div>Password:</div>
+          <input
+          
+            type="password"
+            value={password}
+            onChange={e => {
+              setPassword(e.target.value);
+            }}
+            placeholder="Password"
+          />
+          <div>Repeat Password:</div>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
-          </Form.Group>
+          <input
+            type="password"
+            value={password1}
+            onChange={e => {
+              setPassword1(e.target.value);
+            }}
+            placeholder="Repeat Password"
+          />
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Repeat Password</Form.Label>
-            <Form.Control type="password" placeholder=" Repeat Password" />
-          </Form.Group>
+          <br />
+          <br />
           <Button variant="primary" type="submit">
             Submit
           </Button>
