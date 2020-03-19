@@ -1,85 +1,65 @@
 import React, { useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Link, Redirect } from "react-router-dom";
+import { Container, Card, Form, Button } from "react-bootstrap";
 // import Menu from "../components/Menu.js";
 import axios from "axios";
+import { useAuth } from "../context/auth.js";
 
-function Login(props) {
-  const [inputs, setInputs] = useState({
-    email: "",
-    password: ""
-  });
+function Login() {
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { setAuthTokens } = useAuth();
 
-  const [serverState, setServerState] = useState({
-    submitting: false,
-    status: null
-  });
-
-  const handleOnChange = event => {
-    event.persist();
-    setInputs(prev => ({
-      ...prev,
-      [event.target.id]: event.target.value
-    }));
-  };
-
-  const handleServerResponse = (ok, msg) => {
-    setServerState({
-      submitting: false,
-      status: { ok, msg }
-    });
-    if (ok) {
-      setInputs({
-        email: "",
-        message: ""
-      });
-    }
-  };
-
-  const handleOnSubmit = event => {
-    event.preventDefault();
-    setServerState({ submitting: true });
-
-    axios({
-      method: "POST",
-      url: "https://gaiadb.herokuapp.com/api/users/login",
-      data: inputs
-    })
-      .then(r => {
-        handleServerResponse(true, "Success");
+  function postLogin() {
+    axios
+      .post("https://gaiadb.herokuapp.com/api/users/login", {
+        email,
+        password
       })
-      .catch(r => {
-        handleServerResponse(false, "You shall not pass!");
+      .then(result => {
+        if (result.status === 200) {
+          setAuthTokens(result.data);
+          setLoggedIn(true);
+        } else {
+          setIsError(true);
+        }
+      })
+      .catch(e => {
+        setIsError(true);
       });
-  };
+  }
+
+  if (isLoggedIn) {
+    return <Redirect to="/admin" />;
+  }
 
   return (
     <>
       <Container>
-        {/* <Menu /> */}
-        <Form onSubmit={handleOnSubmit}>
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            id="email"
-            type="email"
-            placeholder="Enter email"
-            onChange={handleOnChange}
-          />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            id="password"
-            type="password"
-            placeholder="Password"
-            onChange={handleOnChange}
-          />
-
-          <Button variant="primary" type="submit" value="Submit">
-            Submit
-          </Button>
-        </Form>
+        <Card>
+          <Form>
+            <input
+              type="email"
+              value={email}
+              onChange={e => {
+                setEmail(e.target.value);
+              }}
+              placeholder="email"
+            />
+            <input
+              type="password"
+              value={password}
+              onChange={e => {
+                setPassword(e.target.value);
+              }}
+              placeholder="password"
+            />
+            <Button onClick={postLogin}>Sign In</Button>
+          </Form>
+          <Link to="/register">Don't have an account? </Link>
+        </Card>
       </Container>
     </>
   );

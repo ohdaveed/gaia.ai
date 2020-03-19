@@ -1,46 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Login from "./pages/Login.js";
 import Home from "./pages/Home.js";
 import Register from "./pages/Register.js";
 import Admin from "./pages/Dash.js";
-import PrivateRoute from './components/PrivateRoute.js';
+import PrivateRoute from "./components/PrivateRoute.js";
 // import Dash from "./pages/AdminBar.js";
 
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
-import { AuthContext } from './context/auth.js';
+import { AuthContext } from "./context/auth.js";
 
 function App(props) {
+  const [authTokens, setAuthTokens] = useState();
+
+  const setTokens = data => {
+    localStorage.setItem("tokens", JSON.stringify(data));
+    setAuthTokens(data);
+  };
+
   return (
-    <AuthContext.Provider value={false}>
-    <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-          <li>
-            <Link to="/admin">Admin</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
+    <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
+      <Router>
+        <div>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/register">Register</Link>
+            </li>
+            <li>
+              <Link to="/admin">Admin</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          </ul>
 
-        <Switch>
-          <Route exact path="/" component={Home} />
+          <Switch>
+            <Route exact path="/" component={Home} />
 
-          <Route path="/login" component={Login} />
+            <Route path="/login" component={Login} />
 
-          <Route path="/register" component={Register} />
+            <Route path="/register" component={Register} />
 
-          <PrivateRoute path="/admin" component={Admin} />
-        </Switch>
-      </div>
-    </Router>
+            <PrivateRoute path="/admin" component={Admin} />
+          </Switch>
+        </div>
+      </Router>
     </AuthContext.Provider>
   );
 }
