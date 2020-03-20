@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
+import axios from 'axios'
 // import Menu from  '../components/Menu.js'
 import { useAuth } from "../context/auth.js";
+import { Redirect } from 'react-router-dom';
 
 function Register() {
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -9,8 +11,33 @@ function Register() {
   const [email, setEmail] = useState("");
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
   const { setAuthTokens } = useAuth();
+
+  function postRegister() {
+    axios
+      .post("https://gaiadb.herokuapp.com/api/users/register", {
+        username,
+        email,
+        password,
+        password2
+      })
+      .then(result => {
+        if (result.status === 200) {
+          setAuthTokens(result.data);
+          setLoggedIn(true);
+        } else {
+          setIsError(true);
+        }
+      })
+      .catch(e => {
+        setIsError(true);
+      });
+  }
+
+  if (isLoggedIn) {
+    return <Redirect to="/admin" />;
+  }
 
   return (
     <>
@@ -50,16 +77,16 @@ function Register() {
 
           <input
             type="password"
-            value={password1}
+            value={password2}
             onChange={e => {
-              setPassword1(e.target.value);
+              setPassword2(e.target.value);
             }}
             placeholder="Repeat Password"
           />
 
           <br />
           <br />
-          <Button variant="primary" type="submit">
+          <Button variant="primary" onClick={postRegister}>
             Submit
           </Button>
         </Form>
@@ -67,4 +94,5 @@ function Register() {
     </>
   );
 }
+
 export default Register;
