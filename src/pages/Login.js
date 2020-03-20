@@ -40,7 +40,7 @@ const Login = () => {
       <Container>
         <Card>
           <Form>
-            <div className>
+            
             <input
               type="email"
               value={email}
@@ -64,7 +64,7 @@ const Login = () => {
             <br />
             { ' ' }
             <Button onClick={postLogin}>Sign In</Button>
-            </div>
+            {isError}
           </Form>
           <Link to="/register">Don't have an account? </Link>
         </Card>

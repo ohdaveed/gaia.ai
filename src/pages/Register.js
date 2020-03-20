@@ -89,6 +89,7 @@ function Register() {
           <Button variant="primary" onClick={postRegister}>
             Submit
           </Button>
+          {isError}
         </Form>
       </Container>
     </>

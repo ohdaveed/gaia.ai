@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
+import Logout from '../components/Logout.js'
 
 const thumbsContainer = {
   display: "flex",
@@ -63,6 +64,7 @@ function Upload(props) {
   );
 
   return (
+      <>
     <section className="container">
       <div {...getRootProps({ className: "dropzone" })}>
         <input {...getInputProps()} />
@@ -70,6 +72,9 @@ function Upload(props) {
       </div>
       <aside style={thumbsContainer}>{thumbs}</aside>
     </section>
+    <hr />
+    <Logout />
+    </>
   );
 }
 

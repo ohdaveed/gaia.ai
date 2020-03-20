@@ -1,6 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import { LinkContainer } from "react-router-bootstrap";
+import { NavLink } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import { useAuth } from "../context/auth.js";
 
@@ -24,8 +23,6 @@ const NavB = props => {
           <Nav.Link as={NavLink} to="/gallery">
             Gallery
           </Nav.Link>
-
-        
         </Nav>
       ) : (
         <Nav>
@@ -38,10 +35,6 @@ const NavB = props => {
           <Nav.Link as={NavLink} to="/login">
             Login
           </Nav.Link>
-
-          {/* <Nav.Link as={NavLink} to="/admin">
-            Dashboard
-          </Nav.Link> */}
         </Nav>
       )}
     </Navbar>

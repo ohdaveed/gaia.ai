@@ -5,12 +5,13 @@ import Home from "./pages/Home.js";
 import Register from "./pages/Register.js";
 import Admin from "./pages/Dashboard.js";
 import Upload from './components/Upload.js'
+import Gallery from './components/Gallery.js'
 import PrivateRoute from "./components/PrivateRoute.js";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavB from "./components/NavB.js";
 import { AuthContext } from "./context/auth.js";
-import { Button, Row, Col, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 function App(props) {
   const [authTokens, setAuthTokens] = useState(null);
@@ -36,6 +37,8 @@ function App(props) {
             <PrivateRoute path="/admin" component={Admin} />
 
             <PrivateRoute path="/upload" component={Upload} />
+
+            <PrivateRoute path="/gallery" component={Gallery} />
           </Switch>
         </Container>
       </Router>

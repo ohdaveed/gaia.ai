@@ -1,11 +1,16 @@
 import React from 'react'
+import Logout from '../components/Logout.js'
 
-function Gallery(){
+
+const Gallery = () => {
 
 
     return(
         <>
+        
         <h2>Here's the Gallery</h2>
+        <hr />
+        <Logout />
         </>
 
     )

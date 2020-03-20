@@ -1,14 +1,15 @@
 import React from "react";
-import { Button, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import { useAuth } from "../context/auth.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Logout from '../components/Logout.js'
 
 function Admin(props) {
-  const { authTokens, setAuthTokens } = useAuth();
+  const { authTokens } = useAuth();
 
-  function logOut() {
-    setAuthTokens();
-  }
+  // function logOut() {
+  //   setAuthTokens();
+  // }
 
   return (
     <>
@@ -21,9 +22,10 @@ function Admin(props) {
      
 
       <hr />
-      <Row className="justify-content-md-center">
+      {/* <Row className="justify-content-md-center">
         <Button onClick={logOut}> Logout </Button>
-      </Row>
+      </Row> */}
+      <Logout />
     </>
   );
 }
