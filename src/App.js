@@ -20,12 +20,12 @@ function App(props) {
   const setTokens = data => {
     localStorage.setItem("tokens", JSON.stringify(data));
     setAuthTokens(data);
-    console.log(data.payload.name)
-    return data;
+    // console.log(data.payload.name)
+    // return data;
   };
 
   library.add(fab, faUser)
-  
+
   return (
     <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
       <Router>
