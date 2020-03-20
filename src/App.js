@@ -4,7 +4,7 @@ import Login from "./pages/Login.js";
 import Home from "./pages/Home.js";
 import Register from "./pages/Register.js";
 import Admin from "./pages/Dashboard.js";
-
+import Upload from './components/Upload.js'
 import PrivateRoute from "./components/PrivateRoute.js";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -34,6 +34,8 @@ function App(props) {
             <Route path="/register" component={Register} />
 
             <PrivateRoute path="/admin" component={Admin} />
+
+            <PrivateRoute path="/upload" component={Upload} />
           </Switch>
         </Container>
       </Router>
