@@ -10,14 +10,22 @@ import PrivateRoute from "./components/PrivateRoute.js";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import { AuthContext } from "./context/auth.js";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+
 function App(props) {
-  const [authTokens, setAuthTokens] = useState();
+  const [authTokens, setAuthTokens] = useState(null);
 
   const setTokens = data => {
     localStorage.setItem("tokens", JSON.stringify(data));
     setAuthTokens(data);
+    console.log(data.payload.name)
+    return data;
   };
 
+  library.add(fab, faUser)
+  
   return (
     <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
       <Router>
