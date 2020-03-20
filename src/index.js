@@ -1,13 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+
+library.add(fab, faUser);
+
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

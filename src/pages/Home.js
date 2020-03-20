@@ -3,8 +3,7 @@ import { Container, Card , Button } from "react-bootstrap";
 
 
 // import Menu from "../components/Menu.js";
-
-function Home() {
+const Home = () => {
   return (
     <>  
       <Container>
@@ -32,4 +31,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home

@@ -5,7 +5,7 @@ import { Container, Card, Form, Button } from "react-bootstrap";
 import axios from "axios";
 import { useAuth } from "../context/auth.js";
 
-function Login() {
+const Login = () => {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
   const [email, setEmail] = useState("");
@@ -40,6 +40,7 @@ function Login() {
       <Container>
         <Card>
           <Form>
+            <div className>
             <input
               type="email"
               value={email}
@@ -48,6 +49,10 @@ function Login() {
               }}
               placeholder="email"
             />
+            { ' ' }
+            <br />
+            <br />
+            { ' ' }
             <input
               type="password"
               value={password}
@@ -56,7 +61,10 @@ function Login() {
               }}
               placeholder="password"
             />
+            <br />
+            { ' ' }
             <Button onClick={postLogin}>Sign In</Button>
+            </div>
           </Form>
           <Link to="/register">Don't have an account? </Link>
         </Card>
