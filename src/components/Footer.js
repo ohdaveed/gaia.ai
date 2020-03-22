@@ -17,7 +17,7 @@ const Footer = props => {
         </Row>
       ) : (
         <Row>
-          <h6>Copywright David Arrizon</h6>
+          <h6>  David Arrizon</h6>
         </Row>
       )}
     </>

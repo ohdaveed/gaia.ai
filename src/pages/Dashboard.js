@@ -16,8 +16,6 @@ function Admin(props) {
       </Row>
 
       <hr />
-
-      <Logout />
     </>
   );
 }

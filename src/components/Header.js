@@ -1,10 +1,8 @@
-import React from 'react'
-import NavB from './NavB'
+import React from "react";
+import NavB from "./NavB";
 
 const Header = () => {
-return(
-    <NavB />
-)
-}
+  return <NavB />;
+};
 
-export default Header
+export default Header;

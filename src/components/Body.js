@@ -5,13 +5,11 @@ import Register from "../pages/Register.js";
 import Admin from "../pages/Dashboard.js";
 import Upload from "./Upload.js";
 import Gallery from "./Gallery.js";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute.js";
-import NavB from "./NavB";
 
 const Body = () => {
   return (
-      
       <Switch>
         <Route exact path="/" component={Home} />
 
