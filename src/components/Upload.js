@@ -2,8 +2,11 @@ import React from "react";
 import "react-dropzone-uploader/dist/styles.css";
 import Dropzone from "react-dropzone-uploader";
 import Logout from "../components/Logout.js";
+import { useAuth } from "../context/auth.js";
 
-const Upload = () => {
+const Upload = props => {
+  const { authTokens } = useAuth();
+
   const toast = innerHTML => {
     const el = document.getElementById("toast");
     el.innerHTML = innerHTML;
@@ -14,7 +17,14 @@ const Upload = () => {
   };
 
   const getUploadParams = () => {
-    return { url: "https://httpbin.org/post" };
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    const url = "https://gaiadb.herokuapp.com/api/photos/upload"
+  
+    xhr.open('POST', url );
+    xhr.setRequestHeader("Authorization", `"Bearer" + ${authTokens.token}`);
+    return { url };
   };
 
   const handleChangeStatus = ({ meta, remove }, status) => {
