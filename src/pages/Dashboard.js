@@ -2,7 +2,7 @@ import React from "react";
 import { Row } from "react-bootstrap";
 import { useAuth } from "../context/auth.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Logout from "../components/Logout.js";
+import Logout from "../components/Footer.js";
 
 function Admin(props) {
   const { authTokens } = useAuth();

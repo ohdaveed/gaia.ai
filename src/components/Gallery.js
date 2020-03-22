@@ -1,5 +1,5 @@
 import React from 'react'
-import Logout from '../components/Logout.js'
+import Logout from './Footer.js'
 
 
 const Gallery = () => {
