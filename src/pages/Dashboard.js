@@ -18,6 +18,8 @@ function Admin(props) {
         <h2>
           Welcome <FontAwesomeIcon icon="user" /> {authTokens.payload.name}
         </h2>{" "}
+
+        
       </Row>
      
 

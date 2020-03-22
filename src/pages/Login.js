@@ -40,7 +40,6 @@ const Login = () => {
       <Container>
         <Card>
           <Form>
-            
             <input
               type="email"
               value={email}
@@ -48,11 +47,9 @@ const Login = () => {
                 setEmail(e.target.value);
               }}
               placeholder="email"
-            />
-            { ' ' }
+            />{" "}
             <br />
-            <br />
-            { ' ' }
+            <br />{" "}
             <input
               type="password"
               value={password}
@@ -61,9 +58,7 @@ const Login = () => {
               }}
               placeholder="password"
             />
-            <br />
-            { ' ' }
-            <Button onClick={postLogin}>Sign In</Button>
+            <br /> <Button onClick={postLogin}>Sign In</Button>
             {isError}
           </Form>
           <Link to="/register">Don't have an account? </Link>
@@ -71,5 +66,5 @@ const Login = () => {
       </Container>
     </>
   );
-}
+};
 export default Login;
