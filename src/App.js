@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-// import "./App.css";
+import React, { useState } from "react"
 
 import { AuthContext } from "./context/auth.js";
 import { Container } from "react-bootstrap";
-// import Router from './components/Router'
 
 import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/Header";
@@ -21,10 +19,10 @@ function App(props) {
   return (
     <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
       <Router>
-        <Container fluid="md">
-        <Header />
-        <Body />
-        <Footer />
+        <Container fluid="lg">
+          <Header />
+          <Body />
+          <Footer />
         </Container>
       </Router>
     </AuthContext.Provider>

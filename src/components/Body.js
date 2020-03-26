@@ -7,9 +7,11 @@ import Upload from "./Upload.js";
 import Gallery from "./Gallery.js";
 import { Switch, Route } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute.js";
+import { Jumbotron } from "react-bootstrap";
 
 const Body = () => {
   return (
+    <Jumbotron>
       <Switch>
         <Route exact path="/" component={Home} />
 
@@ -23,6 +25,7 @@ const Body = () => {
 
         <PrivateRoute path="/gallery" component={Gallery} />
       </Switch>
+    </Jumbotron>
   );
 };
 

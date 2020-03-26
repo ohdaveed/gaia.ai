@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Row } from "react-bootstrap";
+import { Button, Row, Col } from "react-bootstrap";
 import { useAuth } from "../context/auth.js";
 
 const Footer = props => {
@@ -11,15 +11,17 @@ const Footer = props => {
 
   return (
     <>
-      {authTokens ? (
-        <Row className="justify-content-md-center">
-          <Button onClick={logOut}> Logout </Button>
-        </Row>
-      ) : (
-        <Row>
-          <h6>  David Arrizon</h6>
-        </Row>
-      )}
+      <Col>
+        {authTokens ? (
+          <Row className="justify-content-md-center">
+            <Button onClick={logOut}> Logout </Button>
+          </Row>
+        ) : (
+          <Row className="">
+            <h6>{""}</h6>
+          </Row>
+        )}
+      </Col>
     </>
   );
 };

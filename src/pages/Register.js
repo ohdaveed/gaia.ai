@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
-import axios from 'axios'
+import { Card, Form, Button, Col } from "react-bootstrap";
+import axios from "axios";
 // import Menu from  '../components/Menu.js'
 import { useAuth } from "../context/auth.js";
-import { Redirect } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
 
 function Register() {
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -41,18 +41,40 @@ function Register() {
 
   return (
     <>
-      <Container>
-        {/* <Menu /> */}
-        <Form>
-          <div>Username:</div>
-          <input 
-            type='username'
+      <Card>
+        <Form inLine>
+          <Form.Row>
+            <Col>
+              <Form.Control placeholder="Username" />
+            </Col>
+            <Col>
+              <Form.Control placeholder="E-mail" />
+            </Col>
+          </Form.Row>
+          <Form.Row>
+            <Col>
+              <Form.Control placeholder="Password" />
+            </Col>
+            <Col>
+              <Form.Control placeholder="Repeat Password" />
+            </Col>
+          </Form.Row>
+          <Button variant="secondary" type="submit" onClick={postRegister}>
+            Submit
+          </Button>
+          {isError}
+        </Form>
+
+        <div>Username:</div>
+          <input
+            type="username"
             value={username}
             onChange={e => {
-              setUserName(e.target.value)
+              setUserName(e.target.value);
             }}
-            placeholder='Username
-            ' />
+            placeholder="Username
+            "
+          />
 
           <div>Email:</div>
           <input
@@ -65,7 +87,6 @@ function Register() {
           />
           <div>Password:</div>
           <input
-          
             type="password"
             value={password}
             onChange={e => {
@@ -86,12 +107,13 @@ function Register() {
 
           <br />
           <br />
-          <Button variant="primary" onClick={postRegister}>
-            Submit
-          </Button>
-          {isError}
-        </Form>
-      </Container>
+
+        <Card.Img
+          variant="bottom"
+          src="https://res.cloudinary.com/darrizon/image/upload/v1579651896/background-omg/green-leaves.jpg"
+          alt="leaves bg"
+        />
+      </Card>
     </>
   );
 }

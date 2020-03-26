@@ -7,7 +7,7 @@ const NavB = props => {
   const { authTokens } = useAuth();
 
   return (
-    <Navbar>
+    <Navbar bg="dark" variant="dark">
       <Navbar.Brand as={NavLink} to="/">
         Gaia.ai{" "}
       </Navbar.Brand>
