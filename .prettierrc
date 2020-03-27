@@ -1,0 +1,21 @@
+{
+  "tabWidth": 2,
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "auto",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": true,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/arrizondavid/React-Apps/gaia.ai/src/App.js",
+  "parser": "babel"
+}
