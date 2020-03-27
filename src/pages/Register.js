@@ -43,29 +43,7 @@ function Register() {
   return (
     <>
       <Card>
-        <Form inLine>
-          <Form.Row>
-            <Col>
-              <Form.Control placeholder="Username" />
-            </Col>
-            <Col>
-              <Form.Control placeholder="E-mail" />
-            </Col>
-          </Form.Row>
-          <Form.Row>
-            <Col>
-              <Form.Control placeholder="Password" />
-            </Col>
-            <Col>
-              <Form.Control placeholder="Repeat Password" />
-            </Col>
-          </Form.Row>
-          <Button variant="secondary" type="submit" onClick={postRegister}>
-            Submit
-          </Button>
-          {isError}
-        </Form>
-
+       
         <div>Username:</div>
           <input
             type="username"
@@ -108,6 +86,8 @@ function Register() {
 
           <br />
           <br />
+
+          <Button onClick={postRegister} > Register</Button>
 
         <Card.Img
           variant="bottom"
