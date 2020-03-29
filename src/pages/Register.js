@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Form, Button, Col } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import axios from "axios";
 
 // import Menu from  '../components/Menu.js'
@@ -83,6 +83,7 @@ function Register() {
             }}
             placeholder="Repeat Password"
           />
+          {isError}
 
           <br />
           <br />

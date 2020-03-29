@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Row } from "react-bootstrap";
-import { useAuth } from "../context/auth.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Admin(props) {
@@ -10,7 +10,7 @@ function Admin(props) {
     <>
       <Row className="justify-content-md-center">
         <h2>
-          Welcome <FontAwesomeIcon icon="user" /> '${token}'
+          Welcome <FontAwesomeIcon icon="user" /> B
         </h2>{" "}
       </Row>
 

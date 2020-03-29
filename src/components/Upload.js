@@ -1,27 +1,52 @@
-import React, { useState } from 'react'
-// import { useAuth } from "../context/auth.js";
-import useFetch from 'use-http'
+import React, { useCallback } from 'react'
+import Dropzone, { useDropzone } from 'react-dropzone'
+import superagent from 'superagent'
 
-const FileUploader = (props) => {
-  const [file, setFile] = useState('')
-  const { post } = useFetch('https://example.com/upload')
+function Upload() {
+  const onDrop = useCallback((acceptedFiles) => {
+    acceptedFiles.forEach((file) => {
 
+      const formData = new FormData();
 
-  const uploadFile = async () => {
-    const data = new FormData()
-    data.append('file', file)
-    if (file instanceof FormData) await post(data)
-  }
+      // superagent.post('/api/photos/upload/').then(res => {
+      //     console.log(res).catch()
+        
+      
+    })
+  }, [])
 
+  const {acceptedFiles, getRootProps, getInputProps} = useDropzone({onDrop,
+    accept: 'image/jpeg, image/png',
+    noDrag: true,
+    multiple: false
+  });
+  
+  const acceptedFilesItems = acceptedFiles.map(file => (
+    <li key={file.path}>
+      {file.path} - {file.size} bytes
+    </li>
+  ));
+
+  
   return (
+
     <>
-    <div>
-      {/* Drop a file onto the input below */}
-      <input onChange={(e) => setFile(e.target.files[0])} />
-      <button onClick={uploadFile}>Upload</button>
-    </div>
+    <section className="container">
+      <div {...getRootProps({className: 'dropzone'})}>
+        <input {...getInputProps()} />
+        <p>Click here to select an image</p>
+        <em>(Only *.jpeg and *.png images will be accepted)</em>
+      </div>
+      <aside>
+        <h4>Accepted files</h4>
+        <ul>
+         {acceptedFilesItems}
+        </ul>
+       
+      </aside>
+    </section>
     </>
-  )
+  );
 }
 
-export default FileUploader
+export default Upload
