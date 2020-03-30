@@ -9,17 +9,16 @@ import Body from './components/Body'
 import Footer from './components/Footer'
 
 function App(props) {
-	const [authTokens, setAuthTokens] = useState(localStorage.getItem('authTokens') || '')
+	const [authTokens, setAuthTokens] = useState(
+		localStorage.getItem('authTokens') || ''
+	)
 
 	const setTokens = (data) => {
-
-		
 		localStorage.setItem('tokens', JSON.stringify(data))
 		console.log(data)
 		setAuthTokens(data)
 	}
 
-	
 	return (
 		<AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
 			<Router>
