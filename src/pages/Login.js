@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import { Container, Card, Form, Button } from 'react-bootstrap'
@@ -14,7 +15,7 @@ const Login = () => {
 
 	function postLogin() {
 		axios
-			.post('http://localhost:8000/api/users/login', {
+			.post('https://gaiadb.herokuapp.com/api/users/login', {
 				email,
 				password
 			})
@@ -39,26 +40,28 @@ const Login = () => {
 		<>
 			<Container>
 				<Card>
-					<Form onClick={postLogin}>
-						<Form.Group controlId="email">
-							<Form.Label>Email address</Form.Label>
-							<Form.Control type="email" placeholder="Enter email" />
-							<Form.Text className="text-muted">
-								We'll never share your email with anyone else.
-							</Form.Text>
-						</Form.Group>
+					<form>
+						<div>Email:</div>
+						<input
+							type="email"
+							value={email}
+							onChange={(e) => {
+								setEmail(e.target.value)
+							}}
+							placeholder="E-mail"
+						/>
+						<div>Password:</div>
+						<input
+							type="password"
+							value={password}
+							onChange={(e) => {
+								setPassword(e.target.value)
+							}}
+							placeholder="Password"
+						/>
 
-						<Form.Group controlId="password">
-							<Form.Label>Password</Form.Label>
-							<Form.Control type="password" placeholder="Password" />
-						</Form.Group>
-						<Form.Group controlId="formBasicCheckbox">
-							<Form.Check type="checkbox" label="Check me out" />
-						</Form.Group>
-						<Button variant="primary">
-							Submit
-						</Button>
-					</Form>
+						<Button onClick={postLogin}> Login</Button>
+					</form>
 					<Link to="/register">Don't have an account? </Link>
 				</Card>
 			</Container>
