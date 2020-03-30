@@ -9,7 +9,7 @@ import Body from './components/Body'
 import Footer from './components/Footer'
 
 function App(props) {
-	const [authTokens, setAuthTokens] = useState(null)
+	const [authTokens, setAuthTokens] = useState(localStorage.getItem('authTokens') || '')
 
 	const setTokens = (data) => {
 
