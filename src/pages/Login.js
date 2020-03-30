@@ -44,6 +44,7 @@ const Login = () => {
 						<div>Email:</div>
 						<input
 							type="email"
+							id="email"
 							value={email}
 							onChange={(e) => {
 								setEmail(e.target.value)
@@ -54,15 +55,17 @@ const Login = () => {
 						<input
 							type="password"
 							value={password}
+							id="password"
 							onChange={(e) => {
 								setPassword(e.target.value)
 							}}
 							placeholder="Password"
 						/>
-
-						<Button onClick={postLogin}> Login</Button>
 					</form>
-					<Link to="/register">Don't have an account? </Link>
+
+					<Button onClick={postLogin}> Login</Button>
+
+					<Link to="/register">Dont have an account? </Link>
 				</Card>
 			</Container>
 		</>

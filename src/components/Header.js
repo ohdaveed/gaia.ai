@@ -2,8 +2,8 @@ import React from 'react'
 import NavB from './NavB'
 import AdminBar from './AdminBar'
 
-const Header = (props) => {
-	const token = JSON.parse(localStorage.getItem('tokens'))
+const Header = () => {
+	const token = localStorage.getItem('tokens')
 
 	return <> {token ? <AdminBar /> : <NavB />}</>
 }
