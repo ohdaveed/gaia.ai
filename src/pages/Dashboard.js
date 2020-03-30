@@ -4,16 +4,14 @@ import { Row } from 'react-bootstrap'
 import { FaBeer } from 'react-icons/fa'
 
 function Admin(props) {
-	const token = JSON.parse(localStorage.getItem('tokens'))
+	const user = JSON.parse(localStorage.getItem('user'))
 
-	console.log(token);
-	console.log(token.payload)
+	const name = user.payload.name
 	
-
 	return (
 		<>
 			<Row className="justify-content-md-center">
-				<h2>Welcome <FaBeer /> {token.payload.name}</h2>
+				<h2>Welcome <FaBeer /> {name}</h2>
 			</Row>
 
 			<hr />

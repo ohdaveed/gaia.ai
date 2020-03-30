@@ -10,20 +10,16 @@ import Footer from './components/Footer'
 
 function App() {
 	const [authTokens, setAuthTokens] = useState(
-		localStorage.getItem('authTokens') || ''
+		localStorage.getItem('token') || ''
 	)
 
 	const setTokens = (data) => {
-		localStorage.setItem('tokens', JSON.stringify(data))
+		localStorage.setItem('user', JSON.stringify(data))
 		console.log('\n data');
 		console.log(data)
 
 		setAuthTokens(data)
 	}
-
-	console.log('\n authtokens');
-	console.log(authTokens);
-	
 	
 	return (
 		<AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>

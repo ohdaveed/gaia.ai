@@ -21,6 +21,7 @@ const Login = () => {
 			})
 			.then((result) => {
 				if (result.status === 200) {
+					localStorage.setItem('token', JSON.stringify(result.data.token))
 					setAuthTokens(result.data)
 					setLoggedIn(true)
 				} else {
