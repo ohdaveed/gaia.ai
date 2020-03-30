@@ -3,9 +3,12 @@ import NavB from './NavB'
 import AdminBar from './AdminBar'
 
 const Header = () => {
-	const token = localStorage.getItem('tokens')
+	const token = localStorage.getItem('token')
 
-	return <> {token ? <AdminBar /> : <NavB />}</>
+	if (token) {
+		return <AdminBar />;
+	}
+	return <NavB />
 }
 
 export default Header
