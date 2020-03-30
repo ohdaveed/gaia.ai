@@ -1,23 +1,19 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import { Row } from "react-bootstrap";
-
+import React from 'react'
+import { Row } from 'react-bootstrap'
 
 function Admin(props) {
-  const token = JSON.parse(localStorage.getItem('tokens'))
-  
+	const token = JSON.parse(localStorage.getItem('tokens'))
 
-  return (
-    <>
-      <Row className="justify-content-md-center">
-        <h2>
-          Welcome B
-        </h2>{" "}
-      </Row>
+	return (
+		<>
+			<Row className="justify-content-md-center">
+				<h2>Welcome {token.payload.name}</h2>
+			</Row>
 
-      <hr />
-    </>
-  );
+			<hr />
+		</>
+	)
 }
 
-export default Admin;
+export default Admin

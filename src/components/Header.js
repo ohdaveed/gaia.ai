@@ -1,8 +1,11 @@
-import React from "react";
-import NavB from "./NavB";
+import React from 'react'
+import NavB from './NavB'
+import AdminBar from './AdminBar'
 
-const Header = () => {
-  return <NavB />;
-};
+const Header = (props) => {
+	const token = JSON.parse(localStorage.getItem('tokens'))
 
-export default Header;
+	return <> {token ? <AdminBar /> : <NavB />}</>
+}
+
+export default Header
