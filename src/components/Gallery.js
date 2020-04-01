@@ -1,19 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
-import ImageList from './ImageList'
-
-
-
+import React, { useState } from "react";
+import ImageList from "./ImageList";
 
 const Gallery = (props) => {
+  return (
+    <>
+      <ImageList />
+    </>
+  );
+};
 
-	return (
-		<>
-
-		<ImageList />
-			
-		</>
-	)
-}
-
-export default Gallery
+export default Gallery;

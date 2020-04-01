@@ -4,7 +4,6 @@ import { Navbar, Nav } from "react-bootstrap";
 // import { useAuth } from "../context/auth.js";
 
 const NavB = () => {
-  
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand as={NavLink} to="/">
@@ -24,17 +23,17 @@ const NavB = () => {
           </Nav.Link>
         </Nav>
       ) : ( */}
-        <Nav>
-          <Nav.Link as={NavLink} to="/" exact>
-            Home
-          </Nav.Link>
-          <Nav.Link as={NavLink} to="/register">
-            Register
-          </Nav.Link>
-          <Nav.Link as={NavLink} to="/login">
-            Login
-          </Nav.Link>
-        </Nav>
+      <Nav>
+        <Nav.Link as={NavLink} to="/" exact>
+          Home
+        </Nav.Link>
+        <Nav.Link as={NavLink} to="/register">
+          Register
+        </Nav.Link>
+        <Nav.Link as={NavLink} to="/login">
+          Login
+        </Nav.Link>
+      </Nav>
       {/* )} */}
     </Navbar>
   );

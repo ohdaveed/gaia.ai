@@ -21,7 +21,6 @@ const Home = () => {
             <Button size="md" href="/register">
               {" "}
               SIGN UP
-              
             </Button>
           </Card.Body>
         </Card.ImgOverlay>

@@ -1,36 +1,28 @@
-import React, { useState } from 'react'
-import axios from 'axios'
-import { Button } from 'react-bootstrap'
+import React from "react";
+import { Provider, useFetch } from "use-http";
 
-function ImageList() {
-  let user = JSON.parse(sessionStorage)
-	const [urls, setUrls] = useState([])
+function Images() {
+  // accepts all `fetch` options
+  const options = {
+    data: [], // setting default for `data` as array instead of undefined
+  };
 
-	const getList = () => {
-		axios
-			.get('https://gaiadb.herokuapp.com/api/users/photos')
-			.then((result) => {
-				if (result.status === 200) {
-					setUrls(result.data)
-				} else {
-					console.log('moo')
-				}
-			})
-			.catch((e) => {
-				console.log(e)
-			})
-  }
-  
+  const { loading, error, data } = useFetch(
+    "https://example.com/todos",
+    options,
+    []
+  ); // onMount (GET by default)
 
+  return (
+    <>
+      {error && "Error!"}
+      {loading && "Loading..."}
 
-	return (
-		<>
-			<h2>hi</h2>
-			<Button onClick={getList} variant="primary">
-				List
-			</Button>
-		</>
-	)
+      {data.map((todo) => (
+        <div key={todo.id}>{todo.title}</div>
+      ))}
+    </>
+  );
 }
 
-export default ImageList
+export default Images;
