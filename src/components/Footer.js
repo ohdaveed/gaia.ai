@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Row, Col } from "react-bootstrap";
 import { useAuth } from "../context/auth.js";
 
-const Footer = (props) => {
+const Footer = () => {
   const { authTokens, setAuthTokens } = useAuth();
 
   function logOut() {

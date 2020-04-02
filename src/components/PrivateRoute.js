@@ -5,13 +5,13 @@ import { useAuth } from "../context/auth.js";
 // eslint-disable-next-line react/prop-types
 function PrivateRoute({ component: Component, ...rest }) {
   const { authTokens } = useAuth();
-  const authenticated = localStorage.getItem("user");
+  // const authenticated = localStorage.getItem("user");
 
   return (
     <Route
       {...rest}
       render={(props) =>
-        authenticated ? <Component {...props} /> : <Redirect to="/login" />
+        authTokens ? <Component {...props} /> : <Redirect to="/login" />
       }
     />
   );
