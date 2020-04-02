@@ -1,22 +1,27 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { Container, Card, Form, Button } from "react-bootstrap";
 // import Menu from "../components/Menu.js";
 import axios from "axios";
-import { useAuth } from "../context/auth.js";
+import { authContext } from "../context/AuthContext";
 
-const Login = () => {
+const Login = ({history}) => {
   // const [isLoggedIn, setLoggedIn] = useState(false);
   // const [isError, setIsError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setAuthTokens } = useAuth();
+
+
+  const { setAuthData } = useContext(authContext);
 
   const onFormSubmit = (e) => {
     e.preventDefault();
     console.log(email);
     console.log(password);
+    setAuthData(email)
+
+    history.replace('/admin')
   };
 
   // function postLogin() {
@@ -44,7 +49,7 @@ const Login = () => {
   // }
 
   return (
-    
+
       <div
         style={{ height: "100vh" }}
         className="d-flex justify-content-center align-items-center"
@@ -83,5 +88,6 @@ const Login = () => {
       </div>
 
   );
+
 };
 export default Login;

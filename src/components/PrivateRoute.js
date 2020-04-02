@@ -1,18 +1,19 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Route, Redirect } from "react-router-dom";
-import { useAuth } from "../context/auth.js";
+// import { useAuth } from "../context/auth.js";
+import { authContext} from "../context/AuthContext"
 
 // eslint-disable-next-line react/prop-types
-function PrivateRoute({ component: Component, ...rest }) {
-  const { authTokens } = useAuth();
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  const { auth } = useContext(authContext);
   // const authenticated = localStorage.getItem("user");
 
   return (
     <Route
       {...rest}
-      render={(props) =>
-        authTokens ? <Component {...props} /> : <Redirect to="/login" />
-      }
+      render={(routeProps) => (
+        auth.data ? <Component {...routeProps} /> : <Redirect to="/login" />
+      )}
     />
   );
 }

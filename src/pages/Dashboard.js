@@ -1,24 +1,31 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import { Row } from "react-bootstrap";
+import React, { useContext } from "react";
+import { Button } from "react-bootstrap";
 import { FaBeer } from "react-icons/fa";
+import { authContext } from "../context/AuthContext";
 
-function Admin(props) {
-  const user = JSON.parse(localStorage.getItem("user"));
+const Admin = () => {
+  // const user = JSON.parse(localStorage.getItem("user"));
+  //
+  // const name = user.payload.name;
 
-  const name = user.payload.name;
+  const { setAuthData, auth } = useContext(authContext);
+  const onLogOut = () => {
+    setAuthData(null);
+  };
 
   return (
     <>
-      <Row className="justify-content-md-center">
-        <h2>
-          Welcome <FaBeer /> {name}
-        </h2>
-      </Row>
-
-      <hr />
+      <div
+        style={{ height: "100vh" }}
+        className="d-flex justify-content-center align-items-center"
+      >
+        <div style={{ width: 300 }}>
+          <h2 className="text-center">{`Welcome, ${auth.data}`}</h2>
+        </div>
+      </div>
     </>
   );
-}
+};
 
 export default Admin;
