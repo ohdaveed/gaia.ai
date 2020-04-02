@@ -21,7 +21,17 @@ const Admin = () => {
         className="d-flex justify-content-center align-items-center"
       >
         <div style={{ width: 300 }}>
-          <h2 className="text-center">{`Welcome, ${auth.data}`}</h2>
+          <h2 className="text-center">
+            Welcome, <FaBeer />
+            {auth.data}
+          </h2>
+          <Button
+            variant="primary"
+            type="button"
+            className="w-100 mt-3"
+            onClick={onLogOut}>
+            Log Out
+            </Button>
         </div>
       </div>
     </>
