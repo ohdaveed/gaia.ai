@@ -1,27 +1,18 @@
 import React from "react";
-import { Button, Row, Col } from "react-bootstrap";
-import { useAuth } from "../context/auth.js";
+import { Row, Col } from "react-bootstrap";
+
 
 const Footer = () => {
-  const { authTokens, setAuthTokens } = useAuth();
 
-  function logOut() {
-    setAuthTokens();
-    localStorage.clear();
-  }
 
   return (
     <>
       <Col>
-        {authTokens ? (
-          <Row className="justify-content-md-center">
-            <Button onClick={logOut}> Logout </Button>
-          </Row>
-        ) : (
+
           <Row className="">
             <h6>{""}</h6>
           </Row>
-        )}
+
       </Col>
     </>
   );

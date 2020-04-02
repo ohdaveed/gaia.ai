@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
-// import { useAuth } from "../context/auth.js";
 import { authContext } from "../context/AuthContext";
 
-// eslint-disable-next-line react/prop-types
+
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const { auth } = useContext(authContext);
   const { loading } = auth;
-  // const authenticated = localStorage.getItem("user");
 
   if (loading) {
     return (

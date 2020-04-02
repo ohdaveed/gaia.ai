@@ -5,10 +5,6 @@ import { FaBeer } from "react-icons/fa";
 import { authContext } from "../context/AuthContext";
 
 const Admin = () => {
-  // const user = JSON.parse(localStorage.getItem("user"));
-  //
-  // const name = user.payload.name;
-
   const { setAuthData, auth } = useContext(authContext);
   const onLogOut = () => {
     setAuthData(null);
@@ -29,9 +25,10 @@ const Admin = () => {
             variant="primary"
             type="button"
             className="w-100 mt-3"
-            onClick={onLogOut}>
+            onClick={onLogOut}
+          >
             Log Out
-            </Button>
+          </Button>
         </div>
       </div>
     </>
