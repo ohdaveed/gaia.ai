@@ -1,11 +1,12 @@
-import React from "react";
-import NavB from "./NavB";
-import AdminBar from "./AdminBar";
+import React, { useContext } from 'react';
+import NavB from './NavB';
+import AdminBar from './AdminBar';
+import { authContext } from '../context/AuthContext';
 
 const Header = () => {
-  const token = localStorage.getItem("token");
+  const { auth } = useContext(authContext);
 
-  if (token) {
+  if (auth.data) {
     return <AdminBar />;
   }
   return <NavB />;
