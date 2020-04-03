@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from "react";
-import { Button } from "react-bootstrap";
-import { FaBeer } from "react-icons/fa";
-import { authContext } from "../context/AuthContext";
+import React, { useContext } from 'react';
+import { Button } from 'react-bootstrap';
+import { FaBeer } from 'react-icons/fa';
+import { authContext } from '../context/AuthContext';
 
 const Admin = () => {
   const { setAuthData, auth } = useContext(authContext);
@@ -13,13 +13,13 @@ const Admin = () => {
   return (
     <>
       <div
-        style={{ height: "100vh" }}
+        style={{ height: '100vh' }}
         className="d-flex justify-content-center align-items-center"
       >
         <div style={{ width: 300 }}>
           <h2 className="text-center">
             Welcome, <FaBeer />
-            {auth.data}
+            User
           </h2>
           <Button
             variant="primary"

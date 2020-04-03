@@ -15,9 +15,34 @@ const Login = ({ history }) => {
   const handleLoginRequest = (event) => {
     event.preventDefault();
 
-    setAuthData(email);
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
 
-    history.replace('/admin');
+    const raw = JSON.stringify({
+      email: email,
+      password: password,
+    });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+    };
+
+    fetch(
+      'http://penguin.linux.test:8000/api/users/login',
+      requestOptions,
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data.token);
+        console.log(typeof data.token);
+        setAuthData(data.token);
+        history.replace('/admin');
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   };
 
   return (
