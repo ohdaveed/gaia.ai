@@ -1,14 +1,36 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { FaBeer } from 'react-icons/fa';
 import { authContext } from '../context/AuthContext';
 
 const Admin = () => {
   const { setAuthData, auth } = useContext(authContext);
+  const [user, setUser] = useState('Loading...');
   const onLogOut = () => {
     setAuthData(null);
   };
+
+  useEffect(() => {
+    async function fetchData() {
+      const requestOptions = {
+        method: 'GET',
+        headers: { Authorization: 'Bearer ' + auth.data },
+      };
+
+      const result = await fetch(
+        'http://penguin.linux.test:8000/api/users/currentuser',
+        requestOptions,
+      )
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          setUser(data.username);
+        });
+    }
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -19,7 +41,7 @@ const Admin = () => {
         <div style={{ width: 300 }}>
           <h2 className="text-center">
             Welcome, <FaBeer />
-            User
+            {user}
           </h2>
           <Button
             variant="primary"
