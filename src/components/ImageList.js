@@ -1,14 +1,42 @@
-import React from 'react';
-// import { Provider, useFetch } from "use-http";
+/* eslint-disable no-unused-vars */
+import React, { useState, useContext, useEffect } from 'react';
+import { authContext } from '../context/AuthContext';
 
-function Images() {
-  // accepts all `fetch` options
+const ImageList = (props) => {
+  const { auth } = useContext(authContext);
+  const [urls, setUrls] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const requestOptions = {
+        method: 'GET',
+        headers: { Authorization: 'Bearer ' + auth.data },
+      };
+
+      const result = await fetch(
+        'http://penguin.linux.test:8000/api/users/photos',
+        requestOptions,
+      )
+        .then((response) => {
+          return response.json();
+        })
+        .then((result) => {
+          setUrls(result);
+          console.log(typeof result);
+          console.log(result);
+        });
+    }
+    fetchData();
+  }, []);
 
   return (
-    <>
-      <h1>hi</h1>
-    </>
+    <ul>
+      <li>
+        <a href="www.google.com" />
+        Google
+      </li>
+    </ul>
   );
-}
+};
 
-export default Images;
+export default ImageList;

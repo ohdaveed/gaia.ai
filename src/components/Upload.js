@@ -28,8 +28,8 @@ const Upload = ({ history }) => {
 
   const fileUploadHandler = (q) => {
     q.preventDefault();
-    console.log(selectedFile);
-    console.log(selectedFile.name);
+    // console.log(selectedFile);
+    // console.log(selectedFile.name);
 
     const formdata = new FormData();
     formdata.append('image', selectedFile);
@@ -40,7 +40,7 @@ const Upload = ({ history }) => {
       body: formdata,
     };
 
-    console.log(requestOptions);
+    // console.log(requestOptions);
 
     fetch(
       'http://penguin.linux.test:8000/api/photos/upload',
