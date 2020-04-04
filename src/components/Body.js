@@ -6,8 +6,8 @@ import Admin from '../pages/Dashboard.js';
 import Gallery from './Gallery.js';
 import { Switch, Route } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute.js';
-import MyDropzone from './MyDropzone';
 import { Jumbotron } from 'react-bootstrap';
+import Upload from './Upload.js';
 
 const Body = () => {
   return (
@@ -20,7 +20,7 @@ const Body = () => {
         <Route path="/register" component={Register} />
 
         <PrivateRoute path="/admin" component={Admin} />
-        <PrivateRoute path="/upload" component={MyDropzone} />
+        <PrivateRoute path="/upload" component={Upload} />
 
         <PrivateRoute path="/gallery" component={Gallery} />
       </Switch>

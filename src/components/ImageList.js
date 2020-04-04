@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 // import { Provider, useFetch } from "use-http";
 
 function Images() {
@@ -6,7 +6,7 @@ function Images() {
 
   return (
     <>
-      <hi>hi</hi>
+      <h1>hi</h1>
     </>
   );
 }
