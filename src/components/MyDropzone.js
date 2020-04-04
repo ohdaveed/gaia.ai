@@ -1,22 +1,26 @@
-import React, { useCallback } from "react";
-import { useDropzone } from "react-dropzone";
+import React, { useContext } from 'react';
+import Dropzone from 'react-dropzone';
 
-function MyDropzone() {
-  const onDrop = useCallback((acceptedFiles) => {
-    // Do something with the files
-  }, []);
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
-
+const MyDropzone = () => {
   return (
-    <div {...getRootProps()}>
-      <input {...getInputProps()} />
-      {isDragActive ? (
-        <p>Drop the files here ...</p>
-      ) : (
-        <p>Drag 'n' drop some files here, or click to select files</p>
+    <Dropzone
+      onDrop={(acceptedFiles) => {
+        console.log(acceptedFiles);
+        console.log('Success');
+      }}
+    >
+      {({ getRootProps, getInputProps }) => (
+        <section>
+          <div {...getRootProps()}>
+            <input {...getInputProps()} />
+            <p>
+              Drag 'n' drop some files here, or click to select files
+            </p>
+          </div>
+        </section>
       )}
-    </div>
+    </Dropzone>
   );
-}
+};
 
 export default MyDropzone;
