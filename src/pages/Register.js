@@ -12,16 +12,39 @@ function Register({ history }) {
 
   const { setAuthData } = useContext(authContext);
 
-  const onFormSubmit = (e) => {
-    e.preventDefault();
-    console.log(username);
-    console.log(email);
-    console.log(password);
-    console.log(password2);
+  const handleRegisterRequest = (event) => {
+    event.preventDefault();
 
-    setAuthData(email);
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
 
-    history.replace('/admin');
+    const raw = JSON.stringify({
+      email: email,
+      username: username,
+      password: password,
+      password2: password2,
+    });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+    };
+
+    fetch(
+      'http://penguin.linux.test:8000/api/users/register',
+      requestOptions,
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log('Success:', data.token);
+        // console.log(typeof data.token);
+        setAuthData(data.token);
+        history.replace('/admin');
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   };
 
   return (
@@ -32,7 +55,7 @@ function Register({ history }) {
       <div style={{ width: 300 }}>
         <h1 className="text-center">Sign Up</h1>
 
-        <Form onSubmit={onFormSubmit}>
+        <Form onSubmit={handleRegisterRequest}>
           <Form.Group>
             <Form.Label>Email address</Form.Label>
             <Form.Control

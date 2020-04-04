@@ -19,7 +19,6 @@ const Gallery = (props) => {
             width="300"
           />
         </div>
-        <Image publicId="sample" width="0.2" />
       </CloudinaryContext>
 
       <ImageList />
