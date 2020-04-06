@@ -39,7 +39,7 @@ function Register({ history }) {
       .then((data) => {
         // console.log('Success:', data.token);
         // console.log(typeof data.token);
-        setAuthData(data.token);
+        setAuthData(data);
         history.replace('/admin');
       })
       .catch((error) => {
@@ -105,7 +105,7 @@ function Register({ history }) {
             type="submit"
             className="w-100 mt-3"
           >
-            Sign In
+            Sign Up
           </Button>
 
           <Link to="/register">Dont have an account? </Link>

@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-
+import mapStyles from './mapStyles';
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
+const handleApiLoaded = (map, maps) => {};
 
 class SimpleMap extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33,
+      lat: 41.8781,
+      lng: -87.6298,
     },
-    zoom: 11,
+    mapStyles,
+    zoom: 14,
   };
 
   render() {
@@ -22,11 +25,15 @@ class SimpleMap extends Component {
           }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
+          yesIWantToUseGoogleMapApiInternals={true}
+          onGoogleApiLoaded={({ map, maps }) =>
+            handleApiLoaded(map, maps)
+          }
         >
           <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text="My Marker"
+            lat={41.8781}
+            lng={-87.6298}
+            text="Plant"
           />
         </GoogleMapReact>
       </div>

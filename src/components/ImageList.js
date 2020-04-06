@@ -6,37 +6,38 @@ const ImageList = (props) => {
   const { auth } = useContext(authContext);
   const [urls, setUrls] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const requestOptions = {
-        method: 'GET',
-        headers: { Authorization: 'Bearer ' + auth.data },
-      };
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const requestOptions = {
+  //       method: 'GET',
+  //       headers: { Authorization: 'Bearer ' + auth.data },
+  //     };
 
-      const result = await fetch(
-        'http://penguin.linux.test:8000/api/photos/all5',
-        requestOptions,
-      )
-        .then((response) => {
-          return response.json();
-        })
-        .then((result) => {
-          setUrls(result);
-          console.log(typeof result);
-          console.log(result);
-        });
-    }
-    fetchData();
-  }, []);
+  //     const result = await fetch(
+  //       'http://penguin.linux.test:8000/api/photos/all5',
+  //       requestOptions,
+  //     )
+  //       .then((response) => {
+  //         return response.json();
+  //       })
+  //       .then((result) => {
+  //         setUrls(result);
+  //         console.log(typeof result);
+  //         console.log(result);
+  //       });
+  //   }
+  //   fetchData();
+  // }, []);
 
   return (
-    <ul>
-      {urls.map(({ _id, url }) => (
-        <li key={`${_id}`}>
-          <img alt="plant" src={url} />
-        </li>
-      ))}
-    </ul>
+    <h1>hi</h1>
+    // <ul>
+    //   {urls.map(({ _id, url }) => (
+    //     <li key={`${_id}`}>
+    //       <img alt="plant" src={url} />
+    //     </li>
+    //   ))}
+    // </ul>
   );
 };
 

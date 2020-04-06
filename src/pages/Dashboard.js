@@ -30,7 +30,7 @@ const Admin = () => {
         });
     }
     fetchData();
-  }, []);
+  }, [auth.data]);
 
   return (
     <>

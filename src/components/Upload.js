@@ -4,27 +4,27 @@ import { authContext } from '../context/AuthContext';
 
 const Upload = ({ history }) => {
   const [selectedFile, setSelectedFile] = useState(null);
-  const [imagePreviewUrl, setImagePreviewUrl] = useState('');
+  // const [imagePreviewUrl, setImagePreviewUrl] = useState('');
   const [selected, setSelected] = useState(false);
   const { auth } = useContext(authContext);
 
-  const filePreviewHandler = (event) => {
-    // let reader = new FileReader();
-    //
-    // // reader.onload = (r) => {
-    // //   console.log('\n r target result');
-    // //   setImagePreviewUrl(r.target.result);
-    // // };
-    //
-    // reader.readAsDataURL(selectedFile);
-    // console.log('\n selected file');
-    // console.log(selectedFile);
-    //
-    // reader.onload = (r) => {
-    //   console.log('\n r target result');
-    //   setImagePreviewUrl(r.target.result);
-    // };
-  };
+  // const filePreviewHandler = (event) => {
+  // let reader = new FileReader();
+  //
+  // // reader.onload = (r) => {
+  // //   console.log('\n r target result');
+  // //   setImagePreviewUrl(r.target.result);
+  // // };
+  //
+  // reader.readAsDataURL(selectedFile);
+  // console.log('\n selected file');
+  // console.log(selectedFile);
+  //
+  // reader.onload = (r) => {
+  //   console.log('\n r target result');
+  //   setImagePreviewUrl(r.target.result);
+  // };
+  // };
 
   const fileUploadHandler = (q) => {
     q.preventDefault();
@@ -74,7 +74,7 @@ const Upload = ({ history }) => {
                 }}
               />
             </Form.Group>
-            {selected ? (
+            {/* {selected ? (
               <div className="imgPreview">
                 <img
                   src={imagePreviewUrl}
@@ -85,7 +85,7 @@ const Upload = ({ history }) => {
               </div>
             ) : (
               <div> </div>
-            )}
+            )} */}
 
             {selectedFile ? (
               <Button
