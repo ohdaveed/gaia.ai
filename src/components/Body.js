@@ -8,7 +8,7 @@ import { Switch, Route } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute.js';
 import { Jumbotron } from 'react-bootstrap';
 import Upload from './Upload.js';
-import SimpleMap from './Map.js';
+import SimpleMap from './SimpleMap.js';
 
 const Body = () => {
   return (
