@@ -38,7 +38,7 @@ const Login = ({ history }) => {
         console.log('Success:', data.token);
         console.log(typeof data.token);
         setAuthData(data.token);
-        history.replace('/admin');
+        history.replace('/dashboard');
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -50,7 +50,7 @@ const Login = ({ history }) => {
       style={{ height: '100vh' }}
       className="d-flex justify-content-center align-items-center"
     >
-      <div style={{ width: 300 }}>
+      <div style={{ width: 500 }}>
         <h1 className="text-center">Sign In</h1>
         <Form onSubmit={(e) => handleLoginRequest(e)}>
           <Form.Group>

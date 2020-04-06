@@ -9,7 +9,7 @@ function AdminBar() {
         Gaia.ai{' '}
       </Navbar.Brand>
       <Nav>
-        <Nav.Link as={NavLink} to="/admin" exact>
+        <Nav.Link as={NavLink} to="/dashboard" exact>
           Dashboard
         </Nav.Link>
         <Nav.Link as={NavLink} to="/upload">

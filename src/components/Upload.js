@@ -61,7 +61,7 @@ const Upload = ({ history }) => {
       style={{ height: '100vh' }}
       className="d-flex justify-content-center align-items-center"
     >
-      <div style={{ width: 300 }}>
+      <div style={{ width: 500 }}>
         <h1 className="text-center">Upload Plant</h1>
         <div>
           <Form onSubmit={(e) => fileUploadHandler(e)}>

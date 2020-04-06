@@ -39,8 +39,8 @@ function Register({ history }) {
       .then((data) => {
         // console.log('Success:', data.token);
         // console.log(typeof data.token);
-        setAuthData(data);
-        history.replace('/admin');
+        setAuthData(data.token);
+        history.replace('/dashboard');
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -52,7 +52,7 @@ function Register({ history }) {
       style={{ height: '100vh' }}
       className="d-flex justify-content-center align-items-center"
     >
-      <div style={{ width: 300 }}>
+      <div style={{ width: 500 }}>
         <h1 className="text-center">Sign Up</h1>
 
         <Form onSubmit={handleRegisterRequest}>

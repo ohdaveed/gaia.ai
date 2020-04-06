@@ -4,9 +4,11 @@ import { Button } from 'react-bootstrap';
 import { FaBeer } from 'react-icons/fa';
 import { authContext } from '../context/AuthContext';
 
-const Admin = () => {
+const Dashboard = () => {
   const { setAuthData, auth } = useContext(authContext);
+
   const [user, setUser] = useState('Loading...');
+
   const onLogOut = () => {
     setAuthData(null);
   };
@@ -27,10 +29,12 @@ const Admin = () => {
         })
         .then((data) => {
           setUser(data.username);
+          console.log('\n this is data from login');
+          console.log(data);
         });
     }
     fetchData();
-  }, [auth.data]);
+  }, []);
 
   return (
     <>
@@ -57,4 +61,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default Dashboard;
