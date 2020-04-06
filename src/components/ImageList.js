@@ -14,7 +14,7 @@ const ImageList = (props) => {
       };
 
       const result = await fetch(
-        'http://penguin.linux.test:8000/api/users/photos',
+        'http://penguin.linux.test:8000/api/photos/all5',
         requestOptions,
       )
         .then((response) => {
@@ -31,10 +31,11 @@ const ImageList = (props) => {
 
   return (
     <ul>
-      <li>
-        <a href="www.google.com" />
-        Google
-      </li>
+      {urls.map(({ _id, url }) => (
+        <li key={`${_id}`}>
+          <img alt="plant" src={url} />
+        </li>
+      ))}
     </ul>
   );
 };

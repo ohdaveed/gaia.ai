@@ -49,6 +49,7 @@ const Upload = ({ history }) => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        history.replace('/gallery');
       })
       .catch((error) => {
         console.error(error);
@@ -63,7 +64,6 @@ const Upload = ({ history }) => {
       <div style={{ width: 300 }}>
         <h1 className="text-center">Upload Plant</h1>
         <div>
-          {auth.data}
           <Form onSubmit={(e) => fileUploadHandler(e)}>
             <Form.Group>
               <Form.Label>Upload Photo</Form.Label>
