@@ -5,6 +5,7 @@ import { Container, Card, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import { authContext } from '../context/AuthContext';
 
+// eslint-disable-next-line react/prop-types
 const Login = ({ history }) => {
   const [error, setError] = useState('');
   const [email, setEmail] = useState('');
@@ -38,6 +39,7 @@ const Login = ({ history }) => {
         console.log('Success:', data.token);
         console.log(typeof data.token);
         setAuthData(data.token);
+        // eslint-disable-next-line react/prop-types
         history.replace('/dashboard');
       })
       .catch((error) => {

@@ -16,17 +16,7 @@ const Gallery = (props) => {
         style={{ height: '100vh' }}
         className="d-flex justify-content-center align-items-center"
       >
-        <div style={{ width: 300 }}></div>
-        <CloudinaryContext cloudName="darrizon">
-          <div>
-            <Image
-              publicId="darrizon/1586004958561-Prayer-Plant-Maranta-leuconeura"
-              width="300"
-            />
-          </div>
-        </CloudinaryContext>
-
-        {/* <ImageList /> */}
+        <div style={{ width: 500 }}></div>
       </div>
     </>
   );

@@ -34,7 +34,7 @@ const Dashboard = () => {
         });
     }
     fetchData();
-  }, []);
+  }, [auth.data]);
 
   return (
     <>
