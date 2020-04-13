@@ -5,7 +5,7 @@ import { authContext } from '../context/AuthContext';
 const Upload = ({ history }) => {
   const [selectedFile, setSelectedFile] = useState(null);
   // const [imagePreviewUrl, setImagePreviewUrl] = useState('');
-  const [selected, setSelected] = useState(false);
+  // const [selected, setSelected] = useState(false);
   const { auth } = useContext(authContext);
 
   // const filePreviewHandler = (event) => {

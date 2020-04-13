@@ -1,20 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useContext, useEffect } from 'react';
-// import ImageList from './ImageList';
+
 import { authContext } from '../context/AuthContext';
-// import {
-//   Image,
-//   Video,
-//   Transformation,
-//   CloudinaryContext,
-// } from 'cloudinary-react';
-// import { getDefaultNormalizer } from '@testing-library/react';
-import { Image } from 'react-bootstrap';
+
+import { Card, Button, Spinner } from 'react-bootstrap';
 
 const Gallery = (props) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const { setAuthData, auth } = useContext(authContext);
+  const { auth } = useContext(authContext);
 
   useEffect(() => {
     setLoading(true);
@@ -46,15 +40,20 @@ const Gallery = (props) => {
   return (
     <>
       {loading ? (
-        <div>
-          <h3>Loading Data...</h3>
-        </div>
+        <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
       ) : (
         data.map((photo) => (
-          <div key={photo.id}>
-            <h3>{photo.url}</h3>
-            <img src={photo.url} width="250" height="225" />
-          </div>
+          <Card style={{ width: '12rem' }} key={photo._id}>
+            <Card.Img variant="top" src={photo.url} />
+            <Card.Body>
+              <Card.Title>{photo._id}</Card.Title>
+              <Card.Text>Latitude: {photo.lat}</Card.Text>
+              <Card.Text>Longitude: {photo.long}</Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
         ))
       )}
     </>
