@@ -6,12 +6,13 @@ import Dashboard from '../pages/Dashboard.js';
 import Gallery from './Gallery.js';
 import { Switch, Route } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute.js';
-import { Jumbotron } from 'react-bootstrap';
+import { Jumbotron, Container } from 'react-bootstrap';
 import Upload from './Upload.js';
 import SimpleMap from './SimpleMap.js';
 
 const Body = () => {
   return (
+    <Container fluid>
     <Jumbotron>
       <Switch>
         <Route exact path="/" component={Home} />
@@ -27,6 +28,7 @@ const Body = () => {
         <PrivateRoute path="/map" component={SimpleMap} />
       </Switch>
     </Jumbotron>
+    </Container>
   );
 };
 

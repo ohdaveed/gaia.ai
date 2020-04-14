@@ -9,15 +9,12 @@ import Body from './components/Body';
 
 function App() {
   return (
-    // <Router>
     <Router>
       <Container fluid className="lg">
         <Header />
         <Body />
       </Container>
     </Router>
-
-    // </Router>
   );
 }
 
