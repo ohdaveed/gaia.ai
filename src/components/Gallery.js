@@ -20,7 +20,7 @@ const Gallery = (props) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showModal, setModal] = useState(false);
-  const [plant, setPlant] = useState([])
+  const [plant, setPlant] = useState([]);
   const [id, setId] = useState('');
   const { auth } = useContext(authContext);
   const [url, setUrl] = useState(
@@ -72,13 +72,16 @@ const Gallery = (props) => {
   };
 
   const identifyPlant = async (id) => {
-    setId(id)
+    setId(id);
 
-    const res = await fetch('http://penguin.linux.test:8000/api/plants/' + id , requestOptions);
+    const res = await fetch(
+      'http://penguin.linux.test:8000/api/plants/' + id,
+      requestOptions,
+    );
 
-    const info = await res.json()
-    setPlant(info)
-    console.log(plant)
+    const info = await res.json();
+    setPlant(info);
+    console.log(plant);
   };
 
   return (
@@ -137,12 +140,15 @@ const Gallery = (props) => {
                       }}
                       onHide={() => setModal(false)}
                     >
-
                       <Modal.Header closeButton>
-                        <Modal.Title id="plant-title">{plant.common_name} Score: {plant.score}%</Modal.Title>
+                        <Modal.Title id="plant-title">
+                          {plant.common_name} Score:{' '}
+                          {plant.score * 100}%
+                        </Modal.Title>
                       </Modal.Header>
                       <Modal.Body id="plant-info">
-                        <img src={plant.url} /> {plant.scientific_name}</Modal.Body>
+                        {plant.scientific_name}
+                      </Modal.Body>
 
                       <Button
                         variant="danger"
@@ -150,6 +156,7 @@ const Gallery = (props) => {
                       >
                         Accept
                       </Button>
+                      <Button>Reject</Button>
                     </Modal>
                   </div>
                 </Card>
