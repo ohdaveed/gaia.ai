@@ -78,7 +78,7 @@ const Gallery = (props) => {
 
     const info = await res.json()
     setPlant(info)
-    console.log(info)
+    console.log(plant)
   };
 
   return (
