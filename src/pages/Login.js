@@ -31,7 +31,7 @@ const Login = ({ history }) => {
     };
 
     fetch(
-      'http://penguin.linux.test:8000/api/users/login',
+      'https://gaiadb.herokuapp.com/api/users/login',
       requestOptions,
     )
       .then((response) => response.json())

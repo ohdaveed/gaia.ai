@@ -43,7 +43,7 @@ const Upload = ({ history }) => {
     // console.log(requestOptions);
 
     fetch(
-      'http://penguin.linux.test:8000/api/photos/upload',
+      'https://gaiadb.herokuapp.com/api/photos/upload',
       requestOptions,
     )
       .then((response) => response.json())

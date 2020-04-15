@@ -21,7 +21,7 @@ const Dashboard = () => {
       };
 
       const result = await fetch(
-        'http://penguin.linux.test:8000/api/users/currentuser',
+        'https://gaiadb.herokuapp.com/api/users/currentuser',
         requestOptions,
       )
         .then((response) => {

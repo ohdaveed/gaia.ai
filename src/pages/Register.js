@@ -33,7 +33,7 @@ function Register({ history }) {
     };
 
     fetch(
-      'http://penguin.linux.test:8000/api/users/register',
+      'https://gaiadb.herokuapp.com/api/users/register',
       requestOptions,
     )
       .then((response) => response.json())

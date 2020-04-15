@@ -21,10 +21,11 @@ const Gallery = (props) => {
   const [loading, setLoading] = useState(false);
   const [showModal, setModal] = useState(false);
   const [plant, setPlant] = useState([]);
+  const [plantname, setPlantName] = useState('')
   const [id, setId] = useState('');
   const { auth } = useContext(authContext);
   const [url, setUrl] = useState(
-    'http://penguin.linux.test:8000/api/photos',
+    'https://gaiadb.herokuapp.com/api/photos',
   );
   const requestOptions = {
     method: 'GET',
@@ -75,7 +76,7 @@ const Gallery = (props) => {
     setId(id);
 
     const res = await fetch(
-      'http://penguin.linux.test:8000/api/plants/' + id,
+      'https://gaiadb.herokuapp.com/api/plants/' + id,
       requestOptions,
     );
 
@@ -104,12 +105,7 @@ const Gallery = (props) => {
                   <Card.Body>
                     <Card.Title>{photo._id}</Card.Title>
 
-                    <Image
-                      cloudName="darrizon"
-                      publicId={photo.name}
-                      width="200"
-                      crop="thumb"
-                    />
+                   <Card.Img variant="top" src={photo.url} />
 
                     <Card.Text>
                       [lat: {photo.lat}, lng: {photo.long}]
