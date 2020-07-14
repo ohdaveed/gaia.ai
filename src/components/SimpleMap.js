@@ -4,7 +4,7 @@ import mapStyles from './mapStyles';
 import PropTypes from 'prop-types';
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-// const handleApiLoaded = (map, maps) => {};
+
 
 class SimpleMap extends Component {
   static defaultProps = {
@@ -26,9 +26,6 @@ class SimpleMap extends Component {
           }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
-          // yesIWantToUseGoogleMapApiInternals={true}
-          // onGoogleApiLoaded={({ map, maps }) =>
-          //   handleApiLoaded(map, maps)
         >
           <AnyReactComponent
             lat={41.8781}
