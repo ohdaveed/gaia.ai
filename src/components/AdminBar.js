@@ -1,12 +1,12 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Nav, Navbar } from 'react-bootstrap';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { Nav, Navbar } from "react-bootstrap";
 
 function AdminBar() {
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand as={NavLink} to="/">
-        Gaia.ai{' '}
+        Gaia.ai{" "}
       </Navbar.Brand>
       <Nav>
         <Nav.Link as={NavLink} to="/dashboard" exact>
