@@ -1,18 +1,17 @@
-import React from 'react';
-import Login from '../pages/Login.js';
-import Home from '../pages/Home.js';
-import Register from '../pages/Register.js';
-import Dashboard from '../pages/Dashboard.js';
-import Gallery from './Gallery.js';
-import { Switch, Route } from 'react-router-dom';
-import PrivateRoute from './PrivateRoute.js';
-import { Jumbotron, Container } from 'react-bootstrap';
-import Upload from './Upload.js';
-import SimpleMap from './SimpleMap.js';
+import React from "react";
+import Login from "../pages/Login.js";
+import Home from "../pages/Home.js";
+import Register from "../pages/Register.js";
+import Dashboard from "../pages/Dashboard.js";
+import Gallery from "./Gallery.js";
+import { Switch, Route } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute.js";
+import { Jumbotron, Container } from "react-bootstrap";
+import Upload from "./Upload.js";
+import SimpleMap from "./SimpleMap.js";
 
 const Body = () => {
   return (
-    <Container fluid>
     <Jumbotron>
       <Switch>
         <Route exact path="/" component={Home} />
@@ -28,7 +27,6 @@ const Body = () => {
         <PrivateRoute path="/map" component={SimpleMap} />
       </Switch>
     </Jumbotron>
-    </Container>
   );
 };
 
