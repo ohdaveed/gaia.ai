@@ -1,15 +1,15 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useContext } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import React, { useState, useContext } from "react";
+import { Button, Form } from "react-bootstrap";
 
-import { Link } from 'react-router-dom';
-import { authContext } from '../context/AuthContext';
+import { Link } from "react-router-dom";
+import { authContext } from "../context/AuthContext";
 
 function Register({ history }) {
-  const [email, setEmail] = useState('');
-  const [username, setUserName] = useState('');
-  const [password, setPassword] = useState('');
-  const [password2, setPassword2] = useState('');
+  const [email, setEmail] = useState("");
+  const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
 
   const { setAuthData } = useContext(authContext);
 
@@ -17,7 +17,7 @@ function Register({ history }) {
     event.preventDefault();
 
     const myHeaders = new Headers();
-    myHeaders.append('Content-Type', 'application/json');
+    myHeaders.append("Content-Type", "application/json");
 
     const raw = JSON.stringify({
       email: email,
@@ -27,30 +27,27 @@ function Register({ history }) {
     });
 
     const requestOptions = {
-      method: 'POST',
+      method: "POST",
       headers: myHeaders,
       body: raw,
     };
 
-    fetch(
-      'https://gaiadb.herokuapp.com/api/users/register',
-      requestOptions,
-    )
+    fetch("https://gaiadb.herokuapp.com/api/users/register", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         // console.log('Success:', data.token);
         // console.log(typeof data.token);
         setAuthData(data.token);
-        history.replace('/dashboard');
+        history.replace("/dashboard");
       })
       .catch((error) => {
-        console.error('Error:', error);
+        console.error("Error:", error);
       });
   };
 
   return (
     <div
-      style={{ height: '100vh' }}
+      style={{ height: "100vh" }}
       className="d-flex justify-content-center align-items-center"
     >
       <div style={{ width: 500 }}>
@@ -101,11 +98,7 @@ function Register({ history }) {
             />
           </Form.Group>
 
-          <Button
-            variant="primary"
-            type="submit"
-            className="w-100 mt-3"
-          >
+          <Button variant="primary" type="submit" className="w-100 mt-3">
             Sign Up
           </Button>
 

@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
-import { Form, Button } from 'react-bootstrap';
-import { authContext } from '../context/AuthContext';
+import React, { useState, useContext } from "react";
+import { Form, Button } from "react-bootstrap";
+import { authContext } from "../context/AuthContext";
 
 const Upload = ({ history }) => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -32,24 +32,21 @@ const Upload = ({ history }) => {
     // console.log(selectedFile.name);
 
     const formdata = new FormData();
-    formdata.append('image', selectedFile);
+    formdata.append("image", selectedFile);
 
     const requestOptions = {
-      method: 'POST',
-      headers: { Authorization: 'Bearer ' + auth.data },
+      method: "POST",
+      headers: { Authorization: "Bearer " + auth.data },
       body: formdata,
     };
 
     // console.log(requestOptions);
 
-    fetch(
-      'https://gaiadb.herokuapp.com/api/photos/upload',
-      requestOptions,
-    )
+    fetch("https://gaiadb.herokuapp.com/api/photos/upload", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        history.replace('/gallery');
+        history.replace("/gallery");
       })
       .catch((error) => {
         console.error(error);
@@ -58,7 +55,7 @@ const Upload = ({ history }) => {
 
   return (
     <div
-      style={{ height: '100vh' }}
+      style={{ height: "100vh" }}
       className="d-flex justify-content-center align-items-center"
     >
       <div style={{ width: 500 }}>
@@ -88,11 +85,7 @@ const Upload = ({ history }) => {
             )} */}
 
             {selectedFile ? (
-              <Button
-                variant="primary"
-                type="submit"
-                className="w-100 mt-3"
-              >
+              <Button variant="primary" type="submit" className="w-100 mt-3">
                 Upload
               </Button>
             ) : (

@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useContext } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import { Container, Card, Form, Button } from 'react-bootstrap';
-import axios from 'axios';
-import { authContext } from '../context/AuthContext';
+import React, { useState, useContext } from "react";
+import { Link, Redirect } from "react-router-dom";
+import { Container, Card, Form, Button } from "react-bootstrap";
+import axios from "axios";
+import { authContext } from "../context/AuthContext";
 
 // eslint-disable-next-line react/prop-types
 const Login = ({ history }) => {
-  const [error, setError] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const { setAuthData } = useContext(authContext);
 
@@ -17,7 +17,7 @@ const Login = ({ history }) => {
     event.preventDefault();
 
     const myHeaders = new Headers();
-    myHeaders.append('Content-Type', 'application/json');
+    myHeaders.append("Content-Type", "application/json");
 
     const raw = JSON.stringify({
       email: email,
@@ -25,31 +25,28 @@ const Login = ({ history }) => {
     });
 
     const requestOptions = {
-      method: 'POST',
+      method: "POST",
       headers: myHeaders,
       body: raw,
     };
 
-    fetch(
-      'https://gaiadb.herokuapp.com/api/users/login',
-      requestOptions,
-    )
+    fetch("https://gaiadb.herokuapp.com/api/users/login", requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        console.log('Success:', data.token);
+        console.log("Success:", data.token);
         console.log(typeof data.token);
         setAuthData(data.token);
         // eslint-disable-next-line react/prop-types
-        history.replace('/dashboard');
+        history.replace("/dashboard");
       })
       .catch((error) => {
-        console.error('Error:', error);
+        console.error("Error:", error);
       });
   };
 
   return (
     <div
-      style={{ height: '100vh' }}
+      style={{ height: "100vh" }}
       className="d-flex justify-content-center align-items-center"
     >
       <div style={{ width: 500 }}>
@@ -76,11 +73,7 @@ const Login = ({ history }) => {
               }}
             />
           </Form.Group>
-          <Button
-            variant="primary"
-            type="submit"
-            className="w-100 mt-3"
-          >
+          <Button variant="primary" type="submit" className="w-100 mt-3">
             Sign In
           </Button>
 

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from "react";
 
-import { authContext } from '../context/AuthContext';
+import { authContext } from "../context/AuthContext";
 
 import {
   Card,
@@ -11,9 +11,9 @@ import {
   CardGroup,
   Figure,
   Jumbotron,
-} from 'react-bootstrap';
+} from "react-bootstrap";
 
-import { Image } from 'cloudinary-react';
+import { Image } from "cloudinary-react";
 
 // eslint-disable-next-line react/prop-types
 const Gallery = (props) => {
@@ -21,22 +21,20 @@ const Gallery = (props) => {
   const [loading, setLoading] = useState(false);
   const [showModal, setModal] = useState(false);
   const [plant, setPlant] = useState([]);
-  const [plantname, setPlantName] = useState('')
-  const [id, setId] = useState('');
+  const [plantname, setPlantName] = useState("");
+  const [id, setId] = useState("");
   const { auth } = useContext(authContext);
-  const [url, setUrl] = useState(
-    'https://gaiadb.herokuapp.com/api/photos',
-  );
+  const [url, setUrl] = useState("https://gaiadb.herokuapp.com/api/photos");
   const requestOptions = {
-    method: 'GET',
-    headers: { Authorization: 'Bearer ' + auth.data },
+    method: "GET",
+    headers: { Authorization: "Bearer " + auth.data },
   };
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
 
-      const response = await fetch(url + '/all', requestOptions);
+      const response = await fetch(url + "/all", requestOptions);
 
       const data = await response.json();
 
@@ -54,13 +52,13 @@ const Gallery = (props) => {
       setId(id);
 
       const requestOptions = {
-        method: 'DELETE',
-        headers: { Authorization: 'Bearer ' + auth.data },
+        method: "DELETE",
+        headers: { Authorization: "Bearer " + auth.data },
       };
 
-      const response = await fetch(url + '/' + id, requestOptions);
+      const response = await fetch(url + "/" + id, requestOptions);
     } catch (err) {
-      console.log('err');
+      console.log("err");
       throw new Error(err);
     } finally {
       // eslint-disable-next-line react/prop-types
@@ -76,8 +74,8 @@ const Gallery = (props) => {
     setId(id);
 
     const res = await fetch(
-      'https://gaiadb.herokuapp.com/api/plants/' + id,
-      requestOptions,
+      "https://gaiadb.herokuapp.com/api/plants/" + id,
+      requestOptions
     );
 
     const info = await res.json();
@@ -97,24 +95,17 @@ const Gallery = (props) => {
               </Spinner>
             ) : (
               data.map((photo, id) => (
-                <Card
-                  style={{ width: '13rem' }}
-                  id={id}
-                  key={photo._id}
-                >
+                <Card style={{ width: "13rem" }} id={id} key={photo._id}>
                   <Card.Body>
                     <Card.Title>{photo._id}</Card.Title>
 
-                   <Card.Img variant="top" src={photo.url} />
+                    <Card.Img variant="top" src={photo.url} />
 
                     <Card.Text>
                       [lat: {photo.lat}, lng: {photo.long}]
                     </Card.Text>
 
-                    <Button
-                      variant="info"
-                      onClick={() => setModal(true)}
-                    >
+                    <Button variant="info" onClick={() => setModal(true)}>
                       Identify
                     </Button>
                     <Button
@@ -138,18 +129,14 @@ const Gallery = (props) => {
                     >
                       <Modal.Header closeButton>
                         <Modal.Title id="plant-title">
-                          {plant.common_name} Score:{' '}
-                          {plant.score * 100}%
+                          {plant.common_name} Score: {plant.score * 100}%
                         </Modal.Title>
                       </Modal.Header>
                       <Modal.Body id="plant-info">
                         {plant.scientific_name}
                       </Modal.Body>
 
-                      <Button
-                        variant="danger"
-                        onClick={() => setModal(false)}
-                      >
+                      <Button variant="danger" onClick={() => setModal(false)}>
                         Accept
                       </Button>
                       <Button>Reject</Button>

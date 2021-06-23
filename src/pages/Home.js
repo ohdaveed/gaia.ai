@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import React from "react";
+import { Card, Button } from "react-bootstrap";
 
 const Home = () => {
   return (
@@ -15,11 +15,11 @@ const Home = () => {
               <h1>GAIA.ai</h1>
             </Card.Title>
             <Card.Text>
-              Explore the world. Take photos. Identify of 10,000
-              species of plants
+              Explore the world. Take photos. Identify of 10,000 species of
+              plants
             </Card.Text>
             <Button size="md" href="/register">
-              {' '}
+              {" "}
               SIGN UP
             </Button>
           </Card.Body>

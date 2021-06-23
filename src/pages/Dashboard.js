@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
-import { FaBeer } from 'react-icons/fa';
-import { authContext } from '../context/AuthContext';
+import React, { useContext, useState, useEffect } from "react";
+import { Button } from "react-bootstrap";
+import { FaBeer } from "react-icons/fa";
+import { authContext } from "../context/AuthContext";
 
 const Dashboard = () => {
   const { setAuthData, auth } = useContext(authContext);
 
-  const [user, setUser] = useState('Loading...');
+  const [user, setUser] = useState("Loading...");
 
   const onLogOut = () => {
     setAuthData(null);
@@ -16,20 +16,20 @@ const Dashboard = () => {
   useEffect(() => {
     async function fetchData() {
       const requestOptions = {
-        method: 'GET',
-        headers: { Authorization: 'Bearer ' + auth.data },
+        method: "GET",
+        headers: { Authorization: "Bearer " + auth.data },
       };
 
       const result = await fetch(
-        'https://gaiadb.herokuapp.com/api/users/currentuser',
-        requestOptions,
+        "https://gaiadb.herokuapp.com/api/users/currentuser",
+        requestOptions
       )
         .then((response) => {
           return response.json();
         })
         .then((data) => {
           setUser(data.username);
-          console.log('\n this is data from login');
+          console.log("\n this is data from login");
           console.log(data);
         });
     }
@@ -39,7 +39,7 @@ const Dashboard = () => {
   return (
     <>
       <div
-        style={{ height: '100vh' }}
+        style={{ height: "100vh" }}
         className="d-flex justify-content-center align-items-center"
       >
         <div style={{ width: 300 }}>
