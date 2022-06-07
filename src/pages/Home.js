@@ -4,6 +4,7 @@ import { Card, Container, Button } from "react-bootstrap";
 const Home = () => {
 	return (
 		<Container>
+		
 			<Card className="bg-dark text-white">
 				<Card.Img
 					src="https://res.cloudinary.com/darrizon/image/upload/v1578199325/background-omg/purple-haze.jpg"

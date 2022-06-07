@@ -12,7 +12,6 @@ const Header = () => {
 	//
 	else {
 		return <NavB />;
-		return <AdminBar />;
 	}
 };
 
