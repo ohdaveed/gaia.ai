@@ -7,16 +7,16 @@ import Body from "./components/Body";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-	return (
-		<AuthProvider>
-			<Router>
-				<Container>
-					<Header />
-					<Body />
-				</Container>
-			</Router>
-		</AuthProvider>
-	);
+  return (
+    <AuthProvider>
+      <Router>
+        <Container>
+          <Header />
+          <Body />
+        </Container>
+      </Router>
+    </AuthProvider>
+  );
 }
 
 export default App;
