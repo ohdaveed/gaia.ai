@@ -5,7 +5,7 @@ import { Navbar, Nav } from "react-bootstrap";
 
 const NavB = () => {
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar className="Navbar" variant="dark">
       <Navbar.Brand as={NavLink} to="/">
         Gaia.ai{" "}
       </Navbar.Brand>
