@@ -11,21 +11,21 @@ import Upload from "./Upload.js";
 import SimpleMap from "./SimpleMap.js";
 
 const Body = () => {
-	return (
-		<Switch>
-			<Route exact path="/" component={Home} />
+  return (
+    <Switch>
+      <Route exact path="/" component={Home} />
 
-			<Route path="/login" component={Login} />
+      <Route path="/login" component={Login} />
 
-			<Route path="/register" component={Register} />
+      <Route path="/register" component={Register} />
 
-			<PrivateRoute path="/dashboard" component={Dashboard} />
-			<PrivateRoute path="/upload" component={Upload} />
+      <PrivateRoute path="/dashboard" component={Dashboard} />
+      <PrivateRoute path="/upload" component={Upload} />
 
-			<PrivateRoute path="/gallery" component={Gallery} />
-			<PrivateRoute path="/map" component={SimpleMap} />
-		</Switch>
-	);
+      <PrivateRoute path="/gallery" component={Gallery} />
+      <PrivateRoute path="/map" component={SimpleMap} />
+    </Switch>
+  );
 };
 
 export default Body;

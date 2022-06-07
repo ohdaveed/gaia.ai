@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../components/Header";
 import { Card, Container, Button } from "react-bootstrap";
 
 const Home = () => {
