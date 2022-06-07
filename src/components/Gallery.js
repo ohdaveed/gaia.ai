@@ -24,7 +24,7 @@ const Gallery = (props) => {
   const [plantname, setPlantName] = useState("");
   const [id, setId] = useState("");
   const { auth } = useContext(authContext);
-  const [url, setUrl] = useState("https://gaiadb.herokuapp.com/api/photos");
+  const [url, setUrl] = useState("http://localhost:8000/api/photos");
   const requestOptions = {
     method: "GET",
     headers: { Authorization: "Bearer " + auth.data },
@@ -71,16 +71,16 @@ const Gallery = (props) => {
   };
 
   const identifyPlant = async (id) => {
-    setId(id);
+    // setId(id);
 
-    const res = await fetch(
-      "https://gaiadb.herokuapp.com/api/plants/" + id,
-      requestOptions
-    );
+    // const res = await fetch(
+    //   "https://gaiadb.herokuapp.com/api/plants/" + id,
+    //   requestOptions
+    // );
 
-    const info = await res.json();
-    setPlant(info);
-    console.log(plant);
+    // const info = await res.json();
+    // setPlant(info);
+    // console.log(plant);
   };
 
   return (

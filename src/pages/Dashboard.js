@@ -29,8 +29,8 @@ const Dashboard = () => {
 				})
 				.then((data) => {
 					setUser(data.username);
-					console.log("\n this is data from login");
-					console.log(data);
+					// console.log("\n this is data from login");
+					// console.log(data);
 				});
 		}
 		fetchData();
