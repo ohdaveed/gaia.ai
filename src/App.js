@@ -10,10 +10,8 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <Container>
-          <Header />
-          <Body />
-        </Container>
+        <Header />
+        <Body />
       </Router>
     </AuthProvider>
   );

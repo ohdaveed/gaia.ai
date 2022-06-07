@@ -1,15 +1,14 @@
 import React from "react";
 import Header from "../components/Header";
-import { Card, Container, Button } from "react-bootstrap";
+import { Card, Container, Button, Stack } from "react-bootstrap";
 
 const Home = () => {
   return (
-    <Card className="bg-dark text-white">
-      <Card.Img
-        src="https://res.cloudinary.com/darrizon/image/upload/v1578199325/background-omg/purple-haze.jpg"
-        alt="leaves bg"
-      />
-      <Card.ImgOverlay>
+    <div
+      style={{ height: "100vh" }}
+      className="d-flex justify-content-center align-items-center"
+    >
+      <Card className="bg-dark text-white">
         <Card.Body>
           <Card.Title>
             <h1>GAIA.ai</h1>
@@ -17,7 +16,7 @@ const Home = () => {
           <Card.Text>
             Get excited about nature again. Trek. Discover. Identify.
           </Card.Text>
-          <div>
+          <Stack direction="horizontal" gap={3}>
             <Button size="md" href="/register">
               {" "}
               Register
@@ -27,10 +26,10 @@ const Home = () => {
               {" "}
               Login
             </Button>
-          </div>
+          </Stack>
         </Card.Body>
-      </Card.ImgOverlay>
-    </Card>
+      </Card>
+    </div>
   );
 };
 
