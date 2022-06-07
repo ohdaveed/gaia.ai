@@ -4,7 +4,7 @@ import { Nav, Navbar, Container } from "react-bootstrap";
 
 function AdminBar() {
   return (
-    <Navbar bg="dark" variant="dark" expand="md">
+    <Navbar className="Navbar" variant="dark" expand="md">
       <Container>
         <Navbar.Brand as={NavLink} to="/">
           Gaia.ai{" "}

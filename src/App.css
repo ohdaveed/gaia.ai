@@ -1,0 +1,16 @@
+/* trunk-ignore(prettier) */
+.Navbar {
+  background-color: #011a28;
+}
+
+.Body {
+  background-color: #723154;
+}
+
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  background-color: #011a28;
+  color: white;
+  height: 60px;
+}

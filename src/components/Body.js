@@ -9,11 +9,12 @@ import PrivateRoute from "./PrivateRoute.js";
 import { Jumbotron, Container } from "react-bootstrap";
 import Upload from "./Upload.js";
 import SimpleMap from "./SimpleMap.js";
+import Landing from "./Landing.js";
 
 const Body = () => {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={Landing} />
 
       <Route path="/login" component={Login} />
 

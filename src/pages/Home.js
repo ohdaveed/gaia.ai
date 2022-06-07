@@ -1,22 +1,20 @@
 import React from "react";
 import Header from "../components/Header";
-import { Card, Container, Button, Stack } from "react-bootstrap";
+import { Card, Container, Button, Row, Col } from "react-bootstrap";
 
 const Home = () => {
   return (
-    <div
-      style={{ height: "100vh" }}
-      className="d-flex justify-content-center align-items-center"
-    >
-      <Card className="bg-dark text-white">
-        <Card.Body>
-          <Card.Title>
-            <h1>GAIA.ai</h1>
-          </Card.Title>
-          <Card.Text>
-            Get excited about nature again. Trek. Discover. Identify.
-          </Card.Text>
-          <Stack direction="horizontal" gap={3}>
+    <Row>
+      <Col md="auto">
+        <Card className="bg-dark text-white">
+          <Card.Body>
+            <Card.Title>
+              <h1>GAIA.ai</h1>
+            </Card.Title>
+            <Card.Text>
+              Get excited about nature again. Trek. Discover. Identify.
+            </Card.Text>
+
             <Button size="md" href="/register">
               {" "}
               Register
@@ -26,10 +24,20 @@ const Home = () => {
               {" "}
               Login
             </Button>
-          </Stack>
-        </Card.Body>
-      </Card>
-    </div>
+          </Card.Body>
+        </Card>
+      </Col>
+      <Col>
+        <Card>
+          <Card.Img
+            src="https://res.cloudinary.com/darrizon/image/upload/e_vibrance:20/v1654637047/background-omg/purple-haze.jpg"
+            alt="Card image"
+          />
+
+          <Card.ImgOverlay>Photo</Card.ImgOverlay>
+        </Card>
+      </Col>
+    </Row>
   );
 };
 
