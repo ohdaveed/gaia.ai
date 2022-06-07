@@ -1,29 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 // import { useAuth } from "../context/auth.js";
 
-const NavB = () => {
+function NavB() {
   return (
-    <Navbar className="Navbar" variant="dark">
+    <Navbar className="Navbar" variant="dark" expand="md">
+      <Container>   
+
+
       <Navbar.Brand as={NavLink} to="/">
         Gaia.ai{" "}
       </Navbar.Brand>
-
-      {/* {authTokens ? (
-        <Nav>
-          <Nav.Link as={NavLink} to="/admin" exact>
-            Dashboard
-          </Nav.Link>
-          <Nav.Link as={NavLink} to="/upload">
-            Upload
-          </Nav.Link>
-          <Nav.Link as={NavLink} to="/gallery">
-            Gallery
-          </Nav.Link>
-        </Nav>
-      ) : ( */}
-      <Nav>
+   
+      <Nav className="justify-content-end">
         <Nav.Link as={NavLink} to="/" exact>
           Home
         </Nav.Link>
@@ -34,7 +24,8 @@ const NavB = () => {
           Login
         </Nav.Link>
       </Nav>
-      {/* )} */}
+  
+      </Container>
     </Navbar>
   );
 };
