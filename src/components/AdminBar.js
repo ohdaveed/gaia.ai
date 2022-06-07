@@ -4,14 +4,17 @@ import { Nav, Navbar, Container } from "react-bootstrap";
 
 function AdminBar() {
 	return (
-		<Navbar bg="dark" variant="dark" expand="lg">
+		<Navbar bg="dark" variant="dark" expand="md">
 			<Container>
 				<Navbar.Brand as={NavLink} to="/">
 					Gaia.ai{" "}
 				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="basic-navbar-nav" />
+				<Navbar.Toggle
+					aria-controls="basic-navbar-nav"
+					className="justify-content-end"
+				/>
 				<Navbar.Collapse id="basic-navbar-nav">
-					<Nav className="me-auto">
+					<Nav className="justify-content-end">
 						<Nav.Link as={NavLink} to="/dashboard" exact>
 							Dashboard
 						</Nav.Link>

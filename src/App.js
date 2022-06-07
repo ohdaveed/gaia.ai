@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import AuthProvider from "./context/AuthContext"
+import AuthProvider from "./context/AuthContext";
 import { Container } from "react-bootstrap";
 import Header from "./components/Header";
 import Body from "./components/Body";

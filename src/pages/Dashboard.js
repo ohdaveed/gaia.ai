@@ -37,27 +37,25 @@ const Dashboard = () => {
 	}, [auth.data]);
 
 	return (
-		<>
-			<div
-				style={{ height: "100vh" }}
-				className="d-flex justify-content-center align-items-center"
-			>
-				<div style={{ width: 300 }}>
-					<h2 className="text-center">
-						Welcome, <FaBeer />
-						{user}
-					</h2>
-					<Button
-						variant="primary"
-						type="button"
-						className="w-100 mt-3"
-						onClick={onLogOut}
-					>
-						Log Out
-					</Button>
-				</div>
+		<div
+			style={{ height: "100vh" }}
+			className="d-flex justify-content-center align-items-center"
+		>
+			<div style={{ width: 300 }}>
+				<h2 className="text-center">
+					Welcome, <FaBeer />
+					{user}
+				</h2>
+				<Button
+					variant="primary"
+					type="button"
+					className="w-100 mt-3"
+					onClick={onLogOut}
+				>
+					Log Out
+				</Button>
 			</div>
-		</>
+		</div>
 	);
 };
 
