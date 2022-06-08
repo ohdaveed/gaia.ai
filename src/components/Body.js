@@ -11,13 +11,12 @@ import Upload from "./Upload.js";
 import SimpleMap from "./SimpleMap.js";
 import Landing from "./Landing.js";
 
+
 const Body = () => {
   return (
     <Switch>
       <Route exact path="/" component={Landing} />
-
       <Route path="/login" component={Login} />
-
       <Route path="/register" component={Register} />
 
       <PrivateRoute path="/dashboard" component={Dashboard} />

@@ -11,8 +11,11 @@ function NavB() {
 
       <Navbar.Brand as={NavLink} to="/">
         Gaia.ai{" "}
-      </Navbar.Brand>
-   
+      </Navbar.Brand>  <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className="justify-content-end"
+        />
+      <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="justify-content-end">
         <Nav.Link as={NavLink} to="/" exact>
           Home
@@ -24,7 +27,8 @@ function NavB() {
           Login
         </Nav.Link>
       </Nav>
-  
+      </Navbar.Collapse>
+
       </Container>
     </Navbar>
   );

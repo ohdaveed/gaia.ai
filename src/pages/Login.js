@@ -42,14 +42,11 @@ const Login = ({ history }) => {
       .catch((error) => {
         console.error("Error:", error);
       });
-  };
+  };``
 
   return (
-    <div
-      style={{ height: "100vh" }}
-      className="d-flex justify-content-center align-items-center"
-    >
-      <div style={{ width: 500 }}>
+<Container fluid>                
+     
         <h1 className="text-center">Sign In</h1>
         <Form onSubmit={(e) => handleLoginRequest(e)}>
           <Form.Group>
@@ -79,8 +76,9 @@ const Login = ({ history }) => {
 
           <Link to="/register">Dont have an account? </Link>
         </Form>
-      </div>
-    </div>
+      
+    
+    </Container>
   );
 };
 export default Login;

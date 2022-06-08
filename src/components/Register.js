@@ -3,8 +3,8 @@ import { Container, Form, Button } from "react-bootstrap";
 
 function Register() {
   return (
-    <>
-      <Container>
+    
+      <Container fluid>
         <Form>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
@@ -33,7 +33,7 @@ function Register() {
           </Button>
         </Form>
       </Container>
-    </>
+  
   );
 }
 export default Register;
