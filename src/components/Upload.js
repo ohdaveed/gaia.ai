@@ -45,7 +45,7 @@ const Upload = ({ history }) => {
     fetch("http://localhost:8000/api/photos/upload", requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log(`This is the ${data} from upload`);
         history.replace("/gallery");
       })
       .catch((error) => {
@@ -55,7 +55,7 @@ const Upload = ({ history }) => {
 
   return (
     <div
-      style={{ height: "100vh" }}
+      style={{ height: "80vh" }}
       className="d-flex justify-content-center align-items-center"
     >
       <div style={{ width: 500 }}>
@@ -71,18 +71,7 @@ const Upload = ({ history }) => {
                 }}
               />
             </Form.Group>
-            {/* {selected ? (
-              <div className="imgPreview">
-                <img
-                  src={imagePreviewUrl}
-                  alt="uploadpreview"
-                  height="200"
-                  width="250"
-                />
-              </div>
-            ) : (
-              <div> </div>
-            )} */}
+          
 
             {selectedFile ? (
               <Button variant="primary" type="submit" className="w-100 mt-3">

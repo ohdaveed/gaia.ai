@@ -37,7 +37,7 @@ const Dashboard = () => {
 
   return (
     <div
-      style={{ height: "100vh" }}
+      style={{ height: '100vh'}}
       className="d-flex justify-content-center align-items-center"
     >
       <div style={{ width: 300 }}>

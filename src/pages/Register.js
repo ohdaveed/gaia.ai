@@ -32,7 +32,7 @@ function Register({ history }) {
       body: raw,
     };
 
-    fetch("https://gaiadb.herokuapp.com/api/users/register", requestOptions)
+    fetch("http://localhost:8000/api/users/register", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         // console.log('Success:', data.token);
@@ -48,9 +48,9 @@ function Register({ history }) {
   return (
     <div
       style={{ height: "100vh" }}
-      className="d-flex justify-content-center align-items-center"
+      className="d-flex justify-content-center align-items-center"    
     >
-      <div style={{ width: 500 }}>
+      <div style={{ width: 400}}>
         <h1 className="text-center">Sign Up</h1>
 
         <Form onSubmit={handleRegisterRequest}>
@@ -102,7 +102,9 @@ function Register({ history }) {
             Sign Up
           </Button>
 
-          <Link to="/register">Dont have an account? </Link>
+          <p>Already have an account? {" "}{" "}
+          <Link to="/login">Login </Link>
+          </p>
         </Form>
       </div>
     </div>
