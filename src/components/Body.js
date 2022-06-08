@@ -11,7 +11,6 @@ import Upload from "./Upload.js";
 import SimpleMap from "./SimpleMap.js";
 import Landing from "./Landing.js";
 
-
 const Body = () => {
   return (
     <Switch>

@@ -71,7 +71,6 @@ const Upload = ({ history }) => {
                 }}
               />
             </Form.Group>
-          
 
             {selectedFile ? (
               <Button variant="primary" type="submit" className="w-100 mt-3">

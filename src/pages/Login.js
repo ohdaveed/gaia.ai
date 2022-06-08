@@ -77,7 +77,9 @@ const Login = ({ history }) => {
             Sign In
           </Button>
 
-          <Link to="/register"n>Dont have an account? </Link>
+          <Link to="/register" n>
+            Dont have an account?{" "}
+          </Link>
         </Form>
       </div>
     </div>
