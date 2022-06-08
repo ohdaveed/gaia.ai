@@ -9,8 +9,10 @@ const Header = () => {
   if (auth.data) {
     return <AdminBar />;
   }
-  // return <NavB />;
-  return <AdminBar />;
+  //
+  else {
+    return <NavB />;
+  }
 };
 
 export default Header;

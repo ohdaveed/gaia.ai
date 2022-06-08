@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useContext, useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { FaBeer } from "react-icons/fa";
@@ -21,7 +20,7 @@ const Dashboard = () => {
       };
 
       const result = await fetch(
-        "https://gaiadb.herokuapp.com/api/users/currentuser",
+        "http://localhost:8000/api/users/currentuser",
         requestOptions
       )
         .then((response) => {
@@ -29,35 +28,33 @@ const Dashboard = () => {
         })
         .then((data) => {
           setUser(data.username);
-          console.log("\n this is data from login");
-          console.log(data);
+          // console.log("\n this is data from login");
+          // console.log(data);
         });
     }
     fetchData();
   }, [auth.data]);
 
   return (
-    <>
-      <div
-        style={{ height: "100vh" }}
-        className="d-flex justify-content-center align-items-center"
-      >
-        <div style={{ width: 300 }}>
-          <h2 className="text-center">
-            Welcome, <FaBeer />
-            {user}
-          </h2>
-          <Button
-            variant="primary"
-            type="button"
-            className="w-100 mt-3"
-            onClick={onLogOut}
-          >
-            Log Out
-          </Button>
-        </div>
+    <div
+      style={{ height: "100vh" }}
+      className="d-flex justify-content-center align-items-center"
+    >
+      <div style={{ width: 300 }}>
+        <h2 className="text-center">
+          Welcome, <FaBeer />
+          {user}
+        </h2>
+        <Button
+          variant="primary"
+          type="button"
+          className="w-100 mt-3"
+          onClick={onLogOut}
+        >
+          Log Out
+        </Button>
       </div>
-    </>
+    </div>
   );
 };
 

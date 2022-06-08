@@ -1,31 +1,43 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import Header from "../components/Header";
+import { Card, Container, Button, Row, Col } from "react-bootstrap";
 
 const Home = () => {
   return (
-    <>
-      <Card className="bg-dark text-white">
-        <Card.Img
-          src="https://res.cloudinary.com/darrizon/image/upload/v1578199325/background-omg/purple-haze.jpg"
-          alt="leaves bg"
-        />
-        <Card.ImgOverlay>
+    <Row>
+      <Col md="auto">
+        <Card className="bg-dark text-white">
           <Card.Body>
             <Card.Title>
               <h1>GAIA.ai</h1>
             </Card.Title>
             <Card.Text>
-              Explore the world. Take photos. Identify of 10,000 species of
-              plants
+              Get excited about nature again. Trek. Discover. Identify.
             </Card.Text>
+
             <Button size="md" href="/register">
               {" "}
-              SIGN UP
+              Register
+            </Button>
+            {"   "}
+            <Button size="md" href="/login">
+              {" "}
+              Login
             </Button>
           </Card.Body>
-        </Card.ImgOverlay>
-      </Card>
-    </>
+        </Card>
+      </Col>
+      <Col>
+        <Card>
+          <Card.Img
+            src="https://res.cloudinary.com/darrizon/image/upload/e_vibrance:20/v1654637047/background-omg/purple-haze.jpg"
+            alt="Card image"
+          />
+
+          <Card.ImgOverlay>Photo</Card.ImgOverlay>
+        </Card>
+      </Col>
+    </Row>
   );
 };
 

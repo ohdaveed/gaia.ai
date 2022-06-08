@@ -9,24 +9,23 @@ import PrivateRoute from "./PrivateRoute.js";
 import { Jumbotron, Container } from "react-bootstrap";
 import Upload from "./Upload.js";
 import SimpleMap from "./SimpleMap.js";
+import Landing from "./Landing.js";
 
 const Body = () => {
   return (
-    <Jumbotron>
-      <Switch>
-        <Route exact path="/" component={Home} />
+    <Switch>
+      <Route exact path="/" component={Landing} />
 
-        <Route path="/login" component={Login} />
+      <Route path="/login" component={Login} />
 
-        <Route path="/register" component={Register} />
+      <Route path="/register" component={Register} />
 
-        <PrivateRoute path="/dashboard" component={Dashboard} />
-        <PrivateRoute path="/upload" component={Upload} />
+      <PrivateRoute path="/dashboard" component={Dashboard} />
+      <PrivateRoute path="/upload" component={Upload} />
 
-        <PrivateRoute path="/gallery" component={Gallery} />
-        <PrivateRoute path="/map" component={SimpleMap} />
-      </Switch>
-    </Jumbotron>
+      <PrivateRoute path="/gallery" component={Gallery} />
+      <PrivateRoute path="/map" component={SimpleMap} />
+    </Switch>
   );
 };
 

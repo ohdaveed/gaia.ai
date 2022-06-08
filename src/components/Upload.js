@@ -42,7 +42,7 @@ const Upload = ({ history }) => {
 
     // console.log(requestOptions);
 
-    fetch("https://gaiadb.herokuapp.com/api/photos/upload", requestOptions)
+    fetch("http://localhost:8000/api/photos/upload", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

@@ -30,7 +30,7 @@ const Login = ({ history }) => {
       body: raw,
     };
 
-    fetch("https://gaiadb.herokuapp.com/api/users/login", requestOptions)
+    fetch("http://localhost:8000/api/users/login", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data.token);
