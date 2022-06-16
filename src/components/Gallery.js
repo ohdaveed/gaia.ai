@@ -97,7 +97,7 @@ const Gallery = (props) => {
                   <Card.Body>
                     <Card.Title>{photo._id}</Card.Title>
 
-                    <Card.Img variant="top" src={photo.url} />
+                    <Card.Img variant="top" src={photo.photo_url} />
 
                     <Card.Text>
                       [lat: {photo.lat}, lng: {photo.long}]
